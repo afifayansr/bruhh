@@ -29,9 +29,9 @@ export function Navbar() {
       <nav className="container mx-auto px-6 h-20 flex items-center justify-between" aria-label="Main navigation">
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2.5 group">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform"
-            style={{ background: "linear-gradient(135deg,hsl(262,83%,58%),hsl(188,100%,45%))", boxShadow: "0 0 20px hsl(262,83%,58%,0.35)" }}>
-            <Zap className="w-5 h-5 text-white" />
+          <div className="w-9 h-9 rounded-xl overflow-hidden group-hover:scale-110 transition-transform ring-1 ring-white/15"
+            style={{ boxShadow: "0 0 20px hsl(262,83%,58%,0.35)" }}>
+            <img src="/profile.png" alt="Afifayan" className="w-full h-full object-cover" />
           </div>
           <div>
             <span className="font-display font-bold text-lg gradient-text">Afifayan</span>

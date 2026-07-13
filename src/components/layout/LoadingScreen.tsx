@@ -48,70 +48,46 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
           />
         </div>
 
-        {/* Animated logo */}
+        {/* Loading spinner */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.3, rotateZ: -45 }}
-          animate={{ opacity: 1, scale: 1, rotateZ: 0 }}
+          initial={{ opacity: 0, scale: 0.5 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ type: "spring", stiffness: 100, damping: 15, duration: 0.9 }}
-          className="mb-16 relative z-10"
+          className="mb-16 relative z-10 w-24 h-24 flex items-center justify-center"
         >
-          {/* Outer glow rings */}
+          {/* Outer ring, spins one way */}
           <motion.div
-            animate={{ scale: [1, 1.15, 1], rotate: [0, 360] }}
-            transition={{ duration: 4, repeat: Infinity }}
-            className="absolute inset-0 rounded-2xl"
+            animate={{ rotate: 360 }}
+            transition={{ duration: 2.2, repeat: Infinity, ease: "linear" }}
+            className="absolute inset-0 rounded-full"
             style={{
-              border: "2px solid rgba(88,28,220,0.3)",
-              width: "120px",
-              height: "120px",
-              left: "-50px",
-              top: "-50px",
+              border: "3px solid transparent",
+              borderTopColor: "hsl(262,83%,65%)",
+              borderRightColor: "hsl(262,83%,65%)",
+              filter: "drop-shadow(0 0 8px hsl(262,83%,58%,0.6))",
             }}
           />
+          {/* Inner ring, spins the other way */}
           <motion.div
-            animate={{ scale: [1.2, 1, 1.2], rotate: [360, 0] }}
-            transition={{ duration: 6, repeat: Infinity }}
-            className="absolute inset-0 rounded-2xl"
+            animate={{ rotate: -360 }}
+            transition={{ duration: 1.6, repeat: Infinity, ease: "linear" }}
+            className="absolute rounded-full"
             style={{
-              border: "1px solid rgba(0,230,255,0.2)",
-              width: "140px",
-              height: "140px",
-              left: "-60px",
-              top: "-60px",
+              inset: "14px",
+              border: "3px solid transparent",
+              borderBottomColor: "hsl(188,100%,55%)",
+              borderLeftColor: "hsl(188,100%,55%)",
+              filter: "drop-shadow(0 0 8px hsl(188,100%,50%,0.6))",
             }}
           />
-
-          {/* Main logo box */}
-          <div 
-            className="w-24 h-24 rounded-2xl flex items-center justify-center relative"
-            style={{
-              background: "linear-gradient(135deg, hsl(262,83%,58%), hsl(188,100%,50%))",
-              boxShadow: "0 0 40px rgba(88,28,220,0.5), inset 0 0 30px rgba(255,255,255,0.1)",
-            }}
-          >
-            <motion.span 
-              animate={{ scale: [1, 1.1, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="font-display font-bold text-4xl text-white drop-shadow-lg"
-            >
-              A
-            </motion.span>
-          </div>
-
-          {/* Pulsing glow */}
+          {/* Center pulse dot */}
           <motion.div
-            animate={{ 
-              scale: [1, 1.5],
-              opacity: [0.8, 0],
-            }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="absolute inset-0 rounded-2xl"
+            animate={{ scale: [1, 1.4, 1], opacity: [0.6, 1, 0.6] }}
+            transition={{ duration: 1.4, repeat: Infinity }}
+            className="w-3 h-3 rounded-full"
             style={{
-              background: "linear-gradient(135deg, hsl(262,83%,58%), hsl(188,100%,50%))",
-              width: "96px",
-              height: "96px",
-              left: "0",
-              top: "0",
+              background: "linear-gradient(135deg, hsl(262,83%,65%), hsl(188,100%,55%))",
+              boxShadow: "0 0 16px hsl(262,83%,58%,0.8)",
             }}
           />
         </motion.div>

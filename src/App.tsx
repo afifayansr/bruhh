@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { Route, Switch, useLocation } from "wouter";
 import { SiteProvider } from "@/lib/SiteContext";
-import { AnimatedCursor } from "@/components/layout/AnimatedCursor";
 import { ParticleBackground } from "@/components/layout/ParticleBackground";
 import { ScrollProgress } from "@/components/layout/ScrollProgress";
 import { LoadingScreen } from "@/components/layout/LoadingScreen";
@@ -28,7 +27,6 @@ function PortfolioHome() {
       {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
       {!loading && (
         <>
-          <AnimatedCursor />
           <ParticleBackground />
           <ScrollProgress />
           <Navbar />

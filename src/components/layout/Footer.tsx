@@ -1,13 +1,10 @@
-import { Zap } from "lucide-react";
-
 export function Footer() {
   return (
     <footer className="border-t border-white/5 py-10">
       <div className="container mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg flex items-center justify-center"
-            style={{ background: "linear-gradient(135deg,hsl(262,83%,58%),hsl(188,100%,45%))" }}>
-            <Zap className="w-4 h-4 text-white" />
+          <div className="w-8 h-8 rounded-lg overflow-hidden ring-1 ring-white/15">
+            <img src="/profile.png" alt="Afifayan" className="w-full h-full object-cover" />
           </div>
           <div>
             <span className="font-display font-bold gradient-text">Afifayan</span>

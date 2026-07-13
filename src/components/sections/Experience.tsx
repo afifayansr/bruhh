@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Server, Globe, Gamepad2 } from "lucide-react";
+import { Server, Gamepad2 } from "lucide-react";
 
 const TIMELINE = [
   {
@@ -9,14 +9,6 @@ const TIMELINE = [
     company: "PieCore™ Cloud Hosting",
     link: "https://piecore.xyz",
     desc: "Founded and built PieCore™ — a game server and cloud hosting platform. Designed the infrastructure, automation systems, and customer panel from the ground up.",
-  },
-  {
-    icon: Globe,
-    color: "hsl(188,100%,55%)",
-    title: "Full Stack Developer",
-    company: "TBangla Shop",
-    link: "https://tbangla.shop",
-    desc: "Built and maintained Bangladesh's premium VPS hosting and OTT subscription platform. Developed the storefront, payment systems, and inventory management.",
   },
   {
     icon: Gamepad2,
