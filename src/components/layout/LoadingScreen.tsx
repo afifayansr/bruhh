@@ -148,10 +148,11 @@ export function LoadingScreen({ onComplete }: { onComplete: () => void }) {
               transition={{ duration: 1.5, repeat: Infinity }}
               className="font-mono text-xs text-white/40"
             >
-              {pct < 25 && "Initializing..."}
-              {pct >= 25 && pct < 50 && "Loading assets..."}
-              {pct >= 50 && pct < 75 && "Rendering interface..."}
-              {pct >= 75 && "Finalizing..."}
+              {pct < 20 && "Booting PieCore™ infrastructure..."}
+              {pct >= 20 && pct < 45 && "Mounting Trident bot dashboard..."}
+              {pct >= 45 && pct < 70 && "Syncing Minecraft SMP data..."}
+              {pct >= 70 && pct < 92 && "Compiling CrynoPanel theme..."}
+              {pct >= 92 && "Finalizing..."}
             </motion.p>
             <span className="font-mono text-sm font-semibold bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
               {pct}%

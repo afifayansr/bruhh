@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowDown, ExternalLink, Mail, ChevronRight } from "lucide-react";
+import { ArrowDown, ExternalLink, Mail, ChevronRight, FolderGit2 } from "lucide-react";
 
 const ROLES = [
   "Full Stack Developer",
+  "Discord Bot Developer",
   "Minecraft Server Developer",
   "Hytale Server Developer",
-  "Hosting Infrastructure Engineer",
   "Founder of PieCore™ Cloud Hosting",
 ];
 
@@ -37,14 +37,29 @@ function Typewriter({ words, speed = 80, pause = 1800 }: { words: string[]; spee
 
 const FLOAT_ITEMS = [
   { emoji: "⚡", label: "PieCore™ Founder", top: "18%", left: "2%", delay: 0, color: "hsl(262,83%,58%)" },
-  { emoji: "🎮", label: "Minecraft Dev",    top: "14%", right: "2%", delay: 0.8, color: "hsl(188,100%,50%)" },
-  { emoji: "🌐", label: "Web Development",  bottom: "24%", left: "1%", delay: 1.6, color: "hsl(320,70%,65%)" },
-  { emoji: "🖥️", label: "Linux Admin",       bottom: "22%", right: "2%", delay: 1.2, color: "hsl(45,100%,60%)" },
+  { emoji: "🤖", label: "Discord Bot Dev",  top: "14%", right: "2%", delay: 0.8, color: "hsl(235,86%,68%)" },
+  { emoji: "🧱", label: "Minecraft SMP Dev",bottom: "24%", left: "1%", delay: 1.6, color: "hsl(130,55%,50%)" },
+  { emoji: "🎨", label: "Panel Theming",    bottom: "22%", right: "2%", delay: 1.2, color: "hsl(30,90%,58%)" },
+];
+
+const STATS = [
+  { value: "4", label: "Projects Shipped" },
+  { value: "1", label: "Company Founded" },
+  { value: "24/7", label: "Infra Monitoring" },
 ];
 
 export function Hero() {
   return (
     <section id="hero" className="relative min-h-[100dvh] flex items-center pt-24 pb-12 overflow-hidden">
+      {/* Subtle dot grid for premium depth */}
+      <div className="absolute inset-0 opacity-[0.25] pointer-events-none"
+        style={{
+          backgroundImage: "radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px)",
+          backgroundSize: "34px 34px",
+          maskImage: "radial-gradient(ellipse 70% 60% at 50% 35%, black 40%, transparent 100%)",
+          WebkitMaskImage: "radial-gradient(ellipse 70% 60% at 50% 35%, black 40%, transparent 100%)",
+        }} />
+
       {/* Background blobs */}
       <div className="blob w-[500px] h-[500px] opacity-[0.18]"
         style={{ top: "20%", right: "20%", background: "radial-gradient(circle,hsl(262,83%,58%),transparent 70%)", animation: "float 9s ease-in-out infinite" }} />
@@ -85,18 +100,13 @@ export function Hero() {
               className="text-base md:text-lg text-white/50 max-w-xl leading-relaxed"
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.45 }}
             >
-              Creating modern web applications, scalable hosting solutions, custom game server infrastructure, and high-performance cloud environments.
+              Creating Discord bots, Minecraft infrastructure, hosting panels, and scalable cloud environments — from working prototype to production.
             </motion.p>
 
             <motion.div className="flex flex-wrap gap-4 mt-2" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.55 }}>
-              <a
-                href="https://piecore.xyz"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="btn-primary text-white rounded-sm flex items-center gap-2"
-              >
+              <a href="#projects" className="btn-primary text-white rounded-sm flex items-center gap-2">
                 <span className="relative z-10 flex items-center gap-2">
-                  <ExternalLink className="w-4 h-4" /> PieCore™ Hosting <ChevronRight className="w-4 h-4" />
+                  <FolderGit2 className="w-4 h-4" /> View Projects <ChevronRight className="w-4 h-4" />
                 </span>
               </a>
               <a href="#contact" className="btn-outline rounded-sm flex items-center gap-2">
@@ -104,9 +114,31 @@ export function Hero() {
               </a>
             </motion.div>
 
+            {/* PieCore ghost link */}
+            <motion.a
+              href="https://piecore.xyz" target="_blank" rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 font-mono text-xs text-white/35 hover:text-cyan-400 transition-colors w-fit -mt-1"
+              initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.62 }}
+            >
+              <ExternalLink className="w-3 h-3" /> or visit my company, PieCore™ Cloud Hosting ↗
+            </motion.a>
+
+            {/* Quick stats */}
+            <motion.div
+              className="flex flex-wrap items-center gap-8 mt-3 pt-6 border-t border-white/8"
+              initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.7 }}
+            >
+              {STATS.map((s) => (
+                <div key={s.label}>
+                  <p className="font-display font-bold text-2xl md:text-3xl gradient-text">{s.value}</p>
+                  <p className="font-mono text-[10px] tracking-widest uppercase text-white/30 mt-1">{s.label}</p>
+                </div>
+              ))}
+            </motion.div>
+
             {/* Tech badges */}
-            <motion.div className="flex flex-wrap items-center gap-3 mt-2" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.7 }}>
-              {["Web Dev", "Minecraft", "Hytale", "VPS/VDS", "Linux", "Cloud"].map((b) => (
+            <motion.div className="flex flex-wrap items-center gap-3 mt-1" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.85 }}>
+              {["Web Dev", "Discord Bots", "Minecraft", "Hytale", "VPS/VDS", "Linux"].map((b) => (
                 <span key={b} className="font-mono text-[11px] text-white/35 border border-white/8 px-3 py-1 rounded-full">{b}</span>
               ))}
             </motion.div>
