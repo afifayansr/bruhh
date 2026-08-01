@@ -7,12 +7,13 @@ import {
   SiInstagram,
   SiTiktok,
   SiTelegram,
-  SiWhatsapp
+  SiWhatsapp,
 } from "react-icons/si";
 
 import {
+  Mail,
   Link,
-  Linkedin
+  Linkedin,
 } from "lucide-react";
 
 import type { ComponentType } from "react";
@@ -23,13 +24,22 @@ const MAP: Record<string, ComponentType<{ className?: string }>> = {
   discord: SiDiscord,
   github: SiGithub,
   twitter: SiX,
+  x: SiX,
   instagram: SiInstagram,
   linkedin: Linkedin,
   tiktok: SiTiktok,
   telegram: SiTelegram,
   whatsapp: SiWhatsapp,
+  mail: Mail,
+  email: Mail,
+  link: Link,
 };
 
 export function iconFor(name: string): ComponentType<{ className?: string }> {
+  if (!name) return Link;
   return MAP[name.toLowerCase()] ?? Link;
+}
+
+export function sortedIcons(names: string[]): ComponentType<{ className?: string }>[] {
+  return names.map((n) => iconFor(n));
 }

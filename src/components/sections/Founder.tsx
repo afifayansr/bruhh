@@ -31,7 +31,7 @@ export function Founder() {
 
       <div className="container mx-auto px-6">
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-          <div className="mb-4"><span className="section-tag">05 — Founder</span></div>
+          <div className="mb-4"><span className="section-tag">06 — Founder</span></div>
           <h2 id="founder-heading" className="section-title text-white mb-4">
             About <span className="gradient-text">Afifayan</span>
           </h2>
@@ -53,7 +53,7 @@ export function Founder() {
                 <div className="relative flex-shrink-0">
                   <div className="w-16 h-16 rounded-2xl overflow-hidden border border-purple-500/30"
                     style={{ boxShadow: "0 0 25px hsl(262,83%,58%,0.3)" }}>
-                    <img src="/profile.png" alt="Afifayan"
+                    <img src="/assets/profile.png" alt="Afifayan"
                       className="w-full h-full object-cover object-top"
                       onError={(e) => {
                         const t = e.currentTarget;
@@ -148,7 +148,7 @@ export function Founder() {
             <div className="relative rounded-2xl p-[1px]"
               style={{ background: "linear-gradient(135deg,hsl(262,83%,58%,0.6),hsl(320,70%,65%,0.4),hsl(188,100%,50%,0.5))" }}>
               <div className="rounded-2xl overflow-hidden relative">
-                <img src="/profile.png" alt="Afifayan — Full Stack Developer & Founder of PieCore™"
+                <img src="/assets/profile.png" alt="Afifayan — Full Stack Developer & Founder of PieCore™"
                   className="w-full object-cover object-top" style={{ aspectRatio: "4/5" }}
                   loading="lazy" decoding="async"
                   onError={(e) => {

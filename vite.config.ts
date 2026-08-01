@@ -50,12 +50,14 @@ export default defineConfig({
   build: {
     outDir: "dist",
     sourcemap: false,
+    chunkSizeWarningLimit: 550,
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ["react", "react-dom"],
           motion: ["framer-motion"],
           icons: ["lucide-react", "react-icons"],
+          three: ["three"],
         },
       },
     },

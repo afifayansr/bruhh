@@ -1,57 +1,98 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 export function AnimatedCursor() {
-  const dot = useRef<HTMLDivElement>(null);
-  const ring = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLDivElement>(null);
+  const [isTouch, setIsTouch] = useState(false);
   const mouse = useRef({ x: 0, y: 0 });
   const pos = useRef({ x: 0, y: 0 });
-  const raf = useRef(0);
+  const hovered = useRef(false);
+  const clicked = useRef(false);
+  const clickTimer = useRef<number | null>(null);
+  const animId = useRef<number>(0);
 
   useEffect(() => {
+    const touch = "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    if (touch) {
+      setIsTouch(true);
+      return;
+    }
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
     const onMove = (e: MouseEvent) => {
       mouse.current = { x: e.clientX, y: e.clientY };
-      if (dot.current) {
-        dot.current.style.left = e.clientX - 6 + "px";
-        dot.current.style.top = e.clientY - 6 + "px";
-      }
+    };
+
+    const onEnter = () => {
+      hovered.current = true;
+    };
+    const onLeave = () => {
+      hovered.current = false;
+    };
+    const onClick = () => {
+      clicked.current = true;
+      if (clickTimer.current) clearTimeout(clickTimer.current);
+      clickTimer.current = window.setTimeout(() => {
+        clicked.current = false;
+      }, 120);
     };
 
     const loop = () => {
-      pos.current.x += (mouse.current.x - pos.current.x) * 0.12;
-      pos.current.y += (mouse.current.y - pos.current.y) * 0.12;
-      if (ring.current) {
-        ring.current.style.left = pos.current.x - 18 + "px";
-        ring.current.style.top = pos.current.y - 18 + "px";
-      }
-      raf.current = requestAnimationFrame(loop);
-    };
-    raf.current = requestAnimationFrame(loop);
+      pos.current.x += (mouse.current.x - pos.current.x) * 0.15;
+      pos.current.y += (mouse.current.y - pos.current.y) * 0.15;
 
-    const onEnter = () => {
-      if (dot.current) dot.current.style.transform = "scale(2)";
-      if (ring.current) ring.current.style.transform = "scale(1.5)";
+      const el = cursorRef.current;
+      if (el) {
+        let scale = 1;
+        if (!reducedMotion) {
+          if (clicked.current) scale = 0.75;
+          else if (hovered.current) scale = 1.5;
+        }
+
+        el.style.left = `${pos.current.x}px`;
+        el.style.top = `${pos.current.y}px`;
+        el.style.transform = `translate(-50%, -50%) scale(${scale})`;
+      }
+
+      animId.current = requestAnimationFrame(loop);
     };
-    const onLeave = () => {
-      if (dot.current) dot.current.style.transform = "scale(1)";
-      if (ring.current) ring.current.style.transform = "scale(1)";
-    };
+
+    animId.current = requestAnimationFrame(loop);
 
     document.addEventListener("mousemove", onMove);
-    document.querySelectorAll("a,button,[role=button]").forEach((el) => {
-      el.addEventListener("mouseenter", onEnter);
-      el.addEventListener("mouseleave", onLeave);
-    });
+    document.addEventListener("mouseover", onEnter);
+    document.addEventListener("mouseout", onLeave);
+    document.addEventListener("click", onClick);
 
     return () => {
-      cancelAnimationFrame(raf.current);
+      cancelAnimationFrame(animId.current);
       document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseover", onEnter);
+      document.removeEventListener("mouseout", onLeave);
+      document.removeEventListener("click", onClick);
+      if (clickTimer.current) clearTimeout(clickTimer.current);
     };
   }, []);
 
+  if (isTouch) return null;
+
   return (
-    <>
-      <div ref={dot} className="custom-cursor" style={{ left: "-100px", top: "-100px" }} />
-      <div ref={ring} className="cursor-follower" style={{ left: "-100px", top: "-100px" }} />
-    </>
+    <div
+      ref={cursorRef}
+      className="fixed inset-0 pointer-events-none z-[9999]"
+      style={{
+        width: "32px",
+        height: "32px",
+        left: "-100px",
+        top: "-100px",
+        backgroundImage: "url('/assets/cursor.png')",
+        backgroundSize: "contain",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "center",
+        filter: "drop-shadow(0 0 12px rgba(255, 30, 60, 0.6))",
+        transition: "filter 0.15s ease-out",
+        willChange: "transform, left, top",
+      }}
+    />
   );
 }

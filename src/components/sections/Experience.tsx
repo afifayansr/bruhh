@@ -33,7 +33,7 @@ export function Experience() {
     <section id="experience" className="py-32 relative z-10">
       <div className="container mx-auto px-6">
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-          <div className="mb-4"><span className="section-tag">06 — Experience</span></div>
+          <div className="mb-4"><span className="section-tag">05 — Experience</span></div>
           <h2 className="section-title text-white mb-4">Development <span className="gradient-text">Experience</span></h2>
           <p className="text-white/40 text-lg mb-16 max-w-xl">Projects and roles across web development, hosting infrastructure, and game server engineering.</p>
         </motion.div>

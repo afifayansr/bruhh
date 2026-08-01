@@ -1,121 +1,150 @@
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Play, Pause, SkipForward, SkipBack, Music2, X, Volume2 } from "lucide-react";
-import { useSite } from "@/lib/SiteContext";
 
 export function MusicPlayer() {
-  const { site } = useSite();
-  const songs = site?.songs ?? [];
-  const [open, setOpen] = useState(false);
-  const [idx, setIdx] = useState(0);
-  const [playing, setPlaying] = useState(false);
-  const [vol, setVol] = useState(0.7);
-  const [progress, setProgress] = useState(0);
   const audioRef = useRef<HTMLAudioElement>(null);
-
-  const song = songs[idx];
-
-  useEffect(() => {
-    const a = audioRef.current;
-    if (!a || !song) return;
-    a.src = song.url;
-    a.volume = vol;
-    if (playing) a.play().catch(() => setPlaying(false));
-  }, [idx, song]);
+  const [playing, setPlaying] = useState(false);
+  const [volume, setVolume] = useState(0.35);
+  const [visible, setVisible] = useState(true);
 
   useEffect(() => {
-    const a = audioRef.current;
-    if (!a) return;
-    if (playing) a.play().catch(() => setPlaying(false));
-    else a.pause();
-  }, [playing]);
+    const audio = audioRef.current;
+    if (!audio) return;
+    audio.volume = volume;
 
-  useEffect(() => {
-    if (audioRef.current) audioRef.current.volume = vol;
-  }, [vol]);
+    const timer = setTimeout(() => {
+      audio.play()
+        .then(() => setPlaying(true))
+        .catch(() => {
+          const unlock = () => {
+            audio.play()
+              .then(() => setPlaying(true))
+              .catch(() => {});
+          };
+          document.addEventListener("click", unlock, { once: true });
+          document.addEventListener("keydown", unlock, { once: true });
+        });
+    }, 560);
 
-  const onTimeUpdate = () => {
-    const a = audioRef.current;
-    if (!a || !a.duration) return;
-    setProgress((a.currentTime / a.duration) * 100);
+    return () => clearTimeout(timer);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const toggle = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (playing) {
+      audio.pause();
+      setPlaying(false);
+    } else {
+      audio.volume = volume;
+      audio.play().then(() => setPlaying(true)).catch(() => {});
+    }
   };
-
-  const seek = (e: React.MouseEvent<HTMLDivElement>) => {
-    const a = audioRef.current;
-    if (!a || !a.duration) return;
-    const rect = e.currentTarget.getBoundingClientRect();
-    a.currentTime = ((e.clientX - rect.left) / rect.width) * a.duration;
-  };
-
-  if (songs.length === 0) return null;
 
   return (
     <>
-      <audio ref={audioRef} onTimeUpdate={onTimeUpdate} onEnded={() => setIdx((i) => (i + 1) % songs.length)} />
-
-      <motion.button
-        onClick={() => setOpen(true)}
-        className="fixed bottom-6 left-6 z-40 w-12 h-12 rounded-full glass flex items-center justify-center text-white/70 hover:text-white border border-white/10 hover:border-white/30 transition-all"
-        whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}
-        animate={playing ? { boxShadow: ["0 0 0 0 rgba(139,92,246,0.3)", "0 0 0 12px rgba(139,92,246,0)", "0 0 0 0 rgba(139,92,246,0)"] } : {}}
-        transition={{ repeat: Infinity, duration: 2 }}
-      >
-        <Music2 className="w-5 h-5" />
-      </motion.button>
+      <audio
+        ref={audioRef}
+        src="/music.mp3"
+        loop
+        preload="auto"
+        onError={() => audioRef.current?.removeAttribute("src")}
+      />
 
       <AnimatePresence>
-        {open && (
+        {visible && (
           <motion.div
-            initial={{ opacity: 0, y: 20, scale: 0.95 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 20, scale: 0.95 }}
-            className="fixed bottom-20 left-6 z-40 w-72 glass rounded-2xl border border-white/10 p-5 shadow-2xl"
+            initial={{ opacity: 0, y: 20, x: 20 }}
+            animate={{ opacity: 1, y: 0, x: 0 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ delay: 2, duration: 0.5 }}
+            className="fixed bottom-6 right-6 z-50 flex items-center gap-2"
           >
-            <div className="flex justify-between items-start mb-4">
-              <span className="font-mono text-xs tracking-widest text-white/30 uppercase">Now Playing</span>
-              <button onClick={() => setOpen(false)} className="text-white/30 hover:text-white"><X className="w-4 h-4" /></button>
-            </div>
+            <AnimatePresence>
+              {playing && (
+                <motion.div
+                  initial={{ opacity: 0, width: 0 }}
+                  animate={{ opacity: 1, width: "80px" }}
+                  exit={{ opacity: 0, width: 0 }}
+                  className="overflow-hidden"
+                >
+                  <input
+                    type="range"
+                    min={0}
+                    max={1}
+                    step={0.01}
+                    value={volume}
+                    onChange={(e) => {
+                      const v = parseFloat(e.target.value);
+                      setVolume(v);
+                      if (audioRef.current) audioRef.current.volume = v;
+                    }}
+                    className="w-20 h-1 cursor-pointer"
+                    style={{ accentColor: "hsl(262,83%,65%)" }}
+                  />
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-            {song?.coverUrl ? (
-              <img src={song.coverUrl} alt={song.title} className="w-full aspect-square object-cover rounded-xl mb-4" />
-            ) : (
-              <div className="w-full aspect-square rounded-xl mb-4 flex items-center justify-center"
-                style={{ background: "linear-gradient(135deg, hsl(262,83%,30%), hsl(188,100%,20%))" }}>
-                <Music2 className="w-12 h-12 text-white/20" />
-              </div>
-            )}
+            <AnimatePresence>
+              {playing && (
+                <motion.div
+                  initial={{ opacity: 0, x: 10 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: 10 }}
+                  className="flex items-center gap-1.5 px-2.5 py-1 rounded-full border text-[10px] font-mono text-white/50"
+                  style={{ background: "rgba(6,8,16,0.8)", borderColor: "rgba(139,92,246,0.2)" }}
+                >
+                  {[1, 2, 3].map((n) => (
+                    <motion.span
+                      key={n}
+                      className="block w-0.5 rounded-full bg-purple-400"
+                      animate={{ height: ["4px", "10px", "4px"] }}
+                      transition={{ duration: 0.8, repeat: Infinity, delay: n * 0.15, ease: "easeInOut" }}
+                    />
+                  ))}
+                  <span>Playing</span>
+                </motion.div>
+              )}
+            </AnimatePresence>
 
-            <p className="font-display font-semibold text-white truncate">{song?.title}</p>
-            <p className="text-sm text-white/40 truncate mb-4">{song?.artist}</p>
+            <motion.button
+              onClick={toggle}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              className="w-10 h-10 rounded-full flex items-center justify-center border transition-all"
+              style={{
+                background: playing
+                  ? "linear-gradient(135deg,hsl(262,83%,45%),hsl(235,86%,55%))"
+                  : "rgba(6,8,16,0.85)",
+                borderColor: playing ? "hsl(262,83%,58%)" : "rgba(255,255,255,0.1)",
+                boxShadow: playing ? "0 0 20px rgba(139,92,246,0.5)" : "none",
+              }}
+              title={playing ? "Pause music" : "Play background music"}
+            >
+              {playing ? (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white">
+                  <rect x="6" y="4" width="4" height="16" rx="1" />
+                  <rect x="14" y="4" width="4" height="16" rx="1" />
+                </svg>
+              ) : (
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="white" style={{ marginLeft: "2px" }}>
+                  <path d="M5 3l14 9-14 9V3z" />
+                </svg>
+              )}
+            </motion.button>
 
-            {/* Progress bar */}
-            <div className="h-1 bg-white/10 rounded-full mb-4 cursor-pointer" onClick={seek}>
-              <div className="h-full rounded-full transition-all" style={{ width: `${progress}%`, background: "linear-gradient(90deg,hsl(262,83%,58%),hsl(188,100%,50%))" }} />
-            </div>
-
-            {/* Controls */}
-            <div className="flex items-center justify-center gap-5 mb-4">
-              <button onClick={() => setIdx((i) => (i - 1 + songs.length) % songs.length)} className="text-white/40 hover:text-white transition-colors">
-                <SkipBack className="w-5 h-5" />
-              </button>
-              <button
-                onClick={() => setPlaying(!playing)}
-                className="w-10 h-10 rounded-full flex items-center justify-center text-white"
-                style={{ background: "linear-gradient(135deg,hsl(262,83%,58%),hsl(188,100%,50%))" }}
-              >
-                {playing ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
-              </button>
-              <button onClick={() => setIdx((i) => (i + 1) % songs.length)} className="text-white/40 hover:text-white transition-colors">
-                <SkipForward className="w-5 h-5" />
-              </button>
-            </div>
-
-            {/* Volume */}
-            <div className="flex items-center gap-2">
-              <Volume2 className="w-3 h-3 text-white/30" />
-              <input type="range" min={0} max={1} step={0.01} value={vol} onChange={(e) => setVol(Number(e.target.value))}
-                className="flex-1 accent-purple-500 h-1" />
-            </div>
+            <motion.button
+              onClick={() => setVisible(false)}
+              whileHover={{ scale: 1.1 }}
+              className="w-5 h-5 rounded-full flex items-center justify-center text-white/20 hover:text-white/60 transition-colors"
+              title="Hide player"
+            >
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </motion.button>
           </motion.div>
         )}
       </AnimatePresence>
