@@ -1,0 +1,284 @@
+{
+  "planTypes": [
+    {
+      "id": "budget",
+      "name": "Standard NVMe",
+      "image": "/cpu/intel.png"
+    }
+  ],
+  "locations": [
+    {
+      "id": "bangladesh",
+      "name": "Bangladesh (BDIX)",
+      "flag": "/flags/bangladesh.svg",
+      "availablePlanTypes": [
+        "budget"
+      ]
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore (SG)",
+      "flag": "/flags/singapore.png",
+      "availablePlanTypes": [
+        "budget"
+      ]
+    }
+  ],
+  "games": [
+    {
+      "id": "minecraft-java",
+      "name": "Minecraft Java",
+      "description": "Bangladesh BDIX-routed Java Edition servers with uncapped CPU and NVMe storage",
+      "icon": "/icons/minecraft-icon.webp",
+      "banner": "/banners/minecraft-banners.webp",
+      "featured": true,
+      "startingAt": "৳206.5/mo",
+      "primaryColor": "#4CAF50",
+      "plans": {
+        "budget": [
+          {
+            "id": "minecraft-java-1",
+            "name": "Willow 2GB",
+            "type": "budget",
+            "ram": "2 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "16GB NVMe M.2 SSD",
+            "price": 206.5,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+          },
+          {
+            "id": "minecraft-java-2",
+            "name": "Quartz 4GB",
+            "type": "budget",
+            "ram": "4 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "32GB NVMe M.2 SSD",
+            "price": 412,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+          },
+          {
+            "id": "minecraft-java-3",
+            "name": "Coal 6GB",
+            "type": "budget",
+            "ram": "6 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "48GB NVMe M.2 SSD",
+            "price": 618,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+          },
+          {
+            "id": "minecraft-java-4",
+            "name": "Emerald 8GB",
+            "type": "budget",
+            "ram": "8 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "64GB NVMe M.2 SSD",
+            "price": 824,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+          },
+          {
+            "id": "minecraft-java-5",
+            "name": "Redstone 10GB",
+            "type": "budget",
+            "ram": "10 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "80GB NVMe M.2 SSD",
+            "price": 1030,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+          },
+          {
+            "id": "minecraft-java-6",
+            "name": "Lapis 12GB",
+            "type": "budget",
+            "ram": "12 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "96GB NVMe M.2 SSD",
+            "price": 1236,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+          },
+          {
+            "id": "minecraft-java-7",
+            "name": "Obsidian 16GB",
+            "type": "budget",
+            "ram": "16 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "128GB NVMe M.2 SSD",
+            "price": 1648,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+          },
+          {
+            "id": "minecraft-java-8",
+            "name": "Netherite 18GB",
+            "type": "budget",
+            "ram": "18 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "144GB NVMe M.2 SSD",
+            "price": 1854,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+          },
+          {
+            "id": "minecraft-java-9",
+            "name": "Diamond 32GB",
+            "type": "budget",
+            "ram": "32 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "256GB NVMe M.2 SSD",
+            "price": 3296,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+          }
+        ],
+        "premium": []
+      }
+    },
+    {
+      "id": "minecraft-bedrock",
+      "name": "Minecraft Bedrock",
+      "description": "Bangladesh BDIX DDR5-powered Bedrock Edition servers with dedicated CPU cores",
+      "icon": "/icons/minecraft-icon.webp",
+      "banner": "/banners/minecraft-banners.webp",
+      "featured": true,
+      "startingAt": "৳190/mo",
+      "primaryColor": "#00BCD4",
+      "plans": {
+        "budget": [
+          {
+            "id": "minecraft-bedrock-1",
+            "name": "Quartz 2GB",
+            "type": "budget",
+            "ram": "2 GB DDR5",
+            "cpu": "1 Dedicated CPU Core",
+            "storage": "16GB NVMe SSD",
+            "price": 190,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
+          },
+          {
+            "id": "minecraft-bedrock-2",
+            "name": "Gold 4GB",
+            "type": "budget",
+            "ram": "4 GB DDR5",
+            "cpu": "150% CPU (1.5 Cores)",
+            "storage": "32GB NVMe SSD",
+            "price": 560,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
+          },
+          {
+            "id": "minecraft-bedrock-3",
+            "name": "Diamond 6GB",
+            "type": "budget",
+            "ram": "6 GB DDR5",
+            "cpu": "200% CPU (2 Cores)",
+            "storage": "48GB NVMe SSD",
+            "price": 570,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
+          },
+          {
+            "id": "minecraft-bedrock-4",
+            "name": "Netherite 8GB",
+            "type": "budget",
+            "ram": "8 GB DDR5",
+            "cpu": "250% CPU (2.5 Cores)",
+            "storage": "64GB NVMe SSD",
+            "price": 760,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
+          },
+          {
+            "id": "minecraft-bedrock-5",
+            "name": "Ender Dragon 12GB",
+            "type": "budget",
+            "ram": "12 GB DDR5",
+            "cpu": "300% CPU (3 Cores)",
+            "storage": "96GB NVMe SSD",
+            "price": 1140,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
+          },
+          {
+            "id": "minecraft-bedrock-6",
+            "name": "Warden 16GB",
+            "type": "budget",
+            "ram": "16 GB DDR5",
+            "cpu": "400% CPU (4 Cores)",
+            "storage": "128GB NVMe SSD",
+            "price": 1520,
+            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
+          }
+        ],
+        "premium": []
+      }
+    },
+    {
+      "id": "minecraft-singapore",
+      "name": "Minecraft Singapore",
+      "description": "Ultra-low latency Singapore-routed Minecraft hosting on premium SG infrastructure",
+      "icon": "/icons/minecraft-icon.webp",
+      "banner": "/banners/minecraft-banners.webp",
+      "featured": false,
+      "startingAt": "৳614/mo",
+      "primaryColor": "#3F51B5",
+      "plans": {
+        "budget": [
+          {
+            "id": "minecraft-sg-1",
+            "name": "Prismarine 6GB",
+            "type": "budget",
+            "ram": "6 GB",
+            "cpu": "Uncapped CPU (SG Routing)",
+            "storage": "48GB NVMe M.2 SSD",
+            "price": 614,
+            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+          },
+          {
+            "id": "minecraft-sg-2",
+            "name": "Amethyst 8GB",
+            "type": "budget",
+            "ram": "8 GB",
+            "cpu": "Uncapped CPU (SG Routing)",
+            "storage": "64GB NVMe M.2 SSD",
+            "price": 828,
+            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+          },
+          {
+            "id": "minecraft-sg-3",
+            "name": "Beacon 12GB",
+            "type": "budget",
+            "ram": "12 GB",
+            "cpu": "Uncapped CPU (SG Routing)",
+            "storage": "96GB NVMe M.2 SSD",
+            "price": 1160,
+            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+          },
+          {
+            "id": "minecraft-sg-4",
+            "name": "Dragon 16GB",
+            "type": "budget",
+            "ram": "16 GB",
+            "cpu": "Uncapped CPU (SG Routing)",
+            "storage": "128GB NVMe M.2 SSD",
+            "price": 1492,
+            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+          },
+          {
+            "id": "minecraft-sg-5",
+            "name": "Warden 20GB",
+            "type": "budget",
+            "ram": "20 GB",
+            "cpu": "Uncapped CPU (SG Routing)",
+            "storage": "160GB NVMe M.2 SSD",
+            "price": 1824,
+            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+          },
+          {
+            "id": "minecraft-sg-6",
+            "name": "Bedrock 32GB",
+            "type": "budget",
+            "ram": "32 GB",
+            "cpu": "Uncapped CPU (SG Routing)",
+            "storage": "256GB NVMe M.2 SSD",
+            "price": 2820,
+            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+          }
+        ],
+        "premium": []
+      }
+    }
+  ]
+}

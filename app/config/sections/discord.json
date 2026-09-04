@@ -1,0 +1,65 @@
+{
+  "planTypes": [
+    {
+      "id": "bot",
+      "name": "Bot Hosting",
+      "displayName": "Bot Hosting Plans",
+      "image": "/icons/nodejs.png"
+    }
+  ],
+  "plans": {
+    "bot": [
+      {
+        "id": "bot-starter",
+        "name": "Starter Bot",
+        "badge": "Best Value",
+        "cpu": "0.3 Ryzen 9 Core",
+        "cpuDetail": "Ryzen 9 CPU",
+        "ram": "256 MB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "3 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "1Gbps",
+        "bandwidthDetail": "Network",
+        "uptime": "24/7 Online",
+        "price": "20",
+        "period": "/mo",
+        "orderLink": "https://i.piecore.xyz/client/index.php/store/bot-hosting-bdix"
+      },
+      {
+        "id": "bot-advanced",
+        "name": "Advanced Bot",
+        "badge": "Popular",
+        "cpu": "1 Ryzen 9 Core",
+        "cpuDetail": "Ryzen 9 CPU",
+        "ram": "1 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "5 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "1Gbps",
+        "bandwidthDetail": "Network",
+        "uptime": "24/7 Online",
+        "price": "60",
+        "period": "/mo",
+        "orderLink": "https://i.piecore.xyz/client/index.php/store/bot-hosting-bdix"
+      },
+      {
+        "id": "bot-medium",
+        "name": "Medium Bot",
+        "badge": "",
+        "cpu": "1 Ryzen 9 Core",
+        "cpuDetail": "Ryzen 9 CPU",
+        "ram": "1 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "16 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "1Gbps",
+        "bandwidthDetail": "Network",
+        "uptime": "24/7 Online",
+        "price": "70",
+        "period": "/mo",
+        "orderLink": "https://i.piecore.xyz/client/index.php/store/bot-hosting-bdix"
+      }
+    ]
+  }
+}

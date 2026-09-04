@@ -1,0 +1,343 @@
+{
+  "planTypes": [
+    {
+      "id": "ryzen-7",
+      "name": "AMD Ryzen 7",
+      "displayName": "AMD Ryzen 7",
+      "image": "/cpu/ryzen7.png"
+    },
+    {
+      "id": "ryzen-9",
+      "name": "AMD Ryzen 9",
+      "displayName": "AMD Ryzen 9",
+      "image": "/cpu/ryzen9.png"
+    },
+    {
+      "id": "bd-intel-gold-6183",
+      "name": "Intel Xeon Gold 6183",
+      "displayName": "Xeon Gold 6183",
+      "image": "/cpu/intel.png"
+    },
+    {
+      "id": "bd-ryzen9-9800x3d",
+      "name": "AMD Ryzen 9 9800X3D",
+      "displayName": "Ryzen 9 9800X3D",
+      "image": "/cpu/ryzen9.png"
+    }
+  ],
+  "locations": [
+    {
+      "id": "bangladesh",
+      "name": "Bangladesh",
+      "flag": "/flags/bangladesh.svg",
+      "displayName": "Bangladesh BDIX",
+      "cpu": "Intel Xeon Gold 6183 / AMD Ryzen 9 9800X3D",
+      "availableCpus": [
+        "bd-intel-gold-6183",
+        "bd-ryzen9-9800x3d"
+      ]
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "flag": "/flags/singapore.png",
+      "displayName": "Singapore",
+      "cpu": "AMD Ryzen 9",
+      "availableCpus": [
+        "ryzen-9"
+      ]
+    },
+    {
+      "id": "germany",
+      "name": "Germany",
+      "flag": "/flags/germany.png",
+      "displayName": "Germany Frankfurt",
+      "cpu": "AMD Ryzen 7",
+      "availableCpus": [
+        "ryzen-7"
+      ]
+    },
+    {
+      "id": "usa",
+      "name": "USA",
+      "flag": "/flags/usa.png",
+      "displayName": "USA",
+      "cpu": "Coming Soon",
+      "availableCpus": []
+    }
+  ],
+  "plans": {
+    "ryzen-7": [
+      {
+        "id": "VDS-R7-01",
+        "name": "VDS-R7-Basic",
+        "badge": "Popular",
+        "cpu": "4 Cores",
+        "cpuDetail": "AMD Ryzen 7",
+        "ram": "16 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "500 GB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "৳6,197.40",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VDS-R7-02",
+        "name": "VDS-R7-Standard",
+        "badge": "Best Value",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 7",
+        "ram": "32 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "৳9,915.84",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VDS-R7-03",
+        "name": "VDS-R7-Pro",
+        "badge": "Professional",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 7",
+        "ram": "64 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "2 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "৳17,352.72",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VDS-R7-04",
+        "name": "VDS-R7-Enterprise",
+        "badge": "Enterprise",
+        "cpu": "16 Cores",
+        "cpuDetail": "AMD Ryzen 7",
+        "ram": "128 GB",
+        "ramDetail": "DDR4 RAM",
+        "storage": "4 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "৳31,606.74",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      }
+    ],
+    "ryzen-9": [
+      {
+        "id": "VDS-R9-01",
+        "name": "VDS-R9-Basic",
+        "badge": "Popular",
+        "cpu": "6 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "32 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "1 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "৳11,155.32",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VDS-R9-02",
+        "name": "VDS-R9-Standard",
+        "badge": "Best Value",
+        "cpu": "8 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "64 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "2 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "৳19,211.94",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VDS-R9-03",
+        "name": "VDS-R9-Pro",
+        "badge": "Professional",
+        "cpu": "12 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "128 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "4 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "৳28,508.04",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VDS-R9-04",
+        "name": "VDS-R9-Enterprise",
+        "badge": "Enterprise",
+        "cpu": "16 Cores",
+        "cpuDetail": "AMD Ryzen 9",
+        "ram": "256 GB",
+        "ramDetail": "DDR5 RAM",
+        "storage": "8 TB",
+        "storageDetail": "NVMe SSD",
+        "bandwidth": "Unlimited",
+        "bandwidthDetail": "Bandwidth",
+        "price": "৳49,579.20",
+        "period": "/mo",
+        "features": [
+          "Full Root Access",
+          "24/7 Support",
+          "99.9% Uptime",
+          "DDoS Protection",
+          "Free Backups",
+          "Priority Support"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      }
+    ],
+    "bd-intel-gold-6183": [
+      {
+        "id": "BD-DEDI-01",
+        "name": "Intel Gold 6183 — 128GB",
+        "badge": "Popular",
+        "cpu": "Intel Xeon Gold 6183",
+        "cpuDetail": "CPU",
+        "ram": "128 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "1 TB",
+        "storageDetail": "SSD Storage",
+        "bandwidth": "1 Gbps",
+        "bandwidthDetail": "Uplink",
+        "price": "৳13,000",
+        "period": "/mo",
+        "features": [
+          "Bangladesh BDIX Connectivity",
+          "Dedicated Hardware",
+          "ECC Memory",
+          "1Gbps Network Uplink",
+          "Guaranteed Uptime",
+          "Dedicated IPv4"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "BD-DEDI-02",
+        "name": "Dual Intel Gold 6183 — 256GB",
+        "badge": "",
+        "cpu": "2x Intel Xeon Gold 6183",
+        "cpuDetail": "CPU",
+        "ram": "256 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "2 TB",
+        "storageDetail": "SSD Storage",
+        "bandwidth": "1 Gbps",
+        "bandwidthDetail": "Uplink",
+        "price": "৳23,000",
+        "period": "/mo",
+        "features": [
+          "Bangladesh BDIX Connectivity",
+          "Dedicated Hardware",
+          "ECC Memory",
+          "1Gbps Network Uplink",
+          "Guaranteed Uptime",
+          "Dedicated IPv4"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      }
+    ],
+    "bd-ryzen9-9800x3d": [
+      {
+        "id": "BD-DEDI-03",
+        "name": "AMD Ryzen 9 9800X3D — 128GB",
+        "badge": "",
+        "cpu": "AMD Ryzen 9 9800X3D",
+        "cpuDetail": "CPU",
+        "ram": "128 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "1 TB",
+        "storageDetail": "SSD Storage",
+        "bandwidth": "1 Gbps",
+        "bandwidthDetail": "Uplink",
+        "price": "৳16,000",
+        "period": "/mo",
+        "features": [
+          "Bangladesh BDIX Connectivity",
+          "Dedicated Hardware",
+          "ECC Memory",
+          "1Gbps Network Uplink",
+          "Guaranteed Uptime",
+          "Dedicated IPv4"
+        ],
+        "orderLink": "https://discord.piecore.xyz"
+      }
+    ]
+  }
+}

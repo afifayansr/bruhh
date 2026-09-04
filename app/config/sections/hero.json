@@ -1,0 +1,84 @@
+{
+  "navbar": {
+    "logo": "/banners/PieCore-Banner.webp",
+    "brandName": "Pie",
+    "brandAccent": "Core"
+  },
+  "hero": {
+    "title": {
+      "suffixColor": "white",
+      "gameNameColor": "blue"
+    },
+    "games": [
+      {
+        "id": "minecraft-java",
+        "name": "Minecraft Java",
+        "displayName": "Minecraft Java",
+        "banner": "/banners/minecraft-banners.webp",
+        "color": "#4CAF50",
+        "showSuffix": true,
+        "showInDropdown": true
+      },
+      {
+        "id": "minecraft-bedrock",
+        "name": "Minecraft Bedrock",
+        "displayName": "Minecraft Bedrock",
+        "banner": "/banners/minecraft-banners.webp",
+        "color": "#00BCD4",
+        "showSuffix": true,
+        "showInDropdown": true
+      },
+      {
+        "id": "minecraft-singapore",
+        "name": "Minecraft Singapore",
+        "displayName": "Minecraft SG",
+        "banner": "/banners/minecraft-banners.webp",
+        "color": "#3F51B5",
+        "showSuffix": true,
+        "showInDropdown": true
+      },
+      {
+        "id": "discord-nodejs",
+        "name": "Discord (NodeJS)",
+        "displayName": "NodeJS Apps",
+        "banner": "/banners/node.webp",
+        "color": "#339933",
+        "showSuffix": false,
+        "showInDropdown": true
+      }
+    ],
+    "cycleInterval": 10000,
+    "partners": [
+      {
+        "name": "Hetzner",
+        "src": "/advertisement/hetzner.png",
+        "loading": "lazy"
+      },
+      {
+        "name": "Intel",
+        "src": "/advertisement/intel.png",
+        "loading": "lazy"
+      },
+      {
+        "name": "Pterodactyl",
+        "src": "/advertisement/pterodactyl.png",
+        "loading": "lazy"
+      },
+      {
+        "name": "NeoProtect",
+        "src": "/advertisement/neoprotect.png",
+        "loading": "lazy"
+      },
+      {
+        "name": "Samsung",
+        "src": "/advertisement/samsung.png",
+        "loading": "lazy"
+      },
+      {
+        "name": "PieCore",
+        "src": "/banners/PieCore-Banner.webp",
+        "loading": "lazy"
+      }
+    ]
+  }
+}

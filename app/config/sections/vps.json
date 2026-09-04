@@ -1,0 +1,282 @@
+{
+  "planTypes": [
+    {
+      "id": "intel-gold-6183",
+      "name": "Intel Xeon Gold 6183",
+      "displayName": "Xeon Gold 6183",
+      "image": "/cpu/intel.png"
+    },
+    {
+      "id": "intel-platinum-8269cy",
+      "name": "Intel Xeon Platinum 8269CY",
+      "displayName": "Xeon Platinum 8269CY",
+      "image": "/cpu/intel.png"
+    }
+  ],
+  "locations": [
+    {
+      "id": "bangladesh-dhaka",
+      "name": "Bangladesh, Dhaka",
+      "flag": "/flags/bangladesh.svg",
+      "displayName": "Bangladesh, Dhaka",
+      "availableCpus": [
+        "intel-gold-6183"
+      ]
+    },
+    {
+      "id": "bangladesh-sylhet",
+      "name": "Bangladesh, Sylhet",
+      "flag": "/flags/bangladesh.svg",
+      "displayName": "Bangladesh, Sylhet",
+      "availableCpus": []
+    },
+    {
+      "id": "singapore",
+      "name": "Singapore",
+      "flag": "/flags/singapore.png",
+      "displayName": "Singapore",
+      "availableCpus": []
+    },
+    {
+      "id": "india-noida",
+      "name": "India, Noida",
+      "flag": "/flags/india.png",
+      "displayName": "India, Noida",
+      "availableCpus": [
+        "intel-platinum-8269cy"
+      ]
+    },
+    {
+      "id": "india-delhi",
+      "name": "India, Delhi",
+      "flag": "/flags/india.png",
+      "displayName": "India, Delhi",
+      "availableCpus": [
+        "intel-platinum-8269cy"
+      ]
+    },
+    {
+      "id": "usa",
+      "name": "United States",
+      "flag": "/flags/usa.png",
+      "displayName": "USA",
+      "availableCpus": []
+    }
+  ],
+  "plans": {
+    "intel-gold-6183": [
+      {
+        "id": "VPS-BD-1",
+        "name": "NOVA — 4GB",
+        "image": "/cpu/intel.png",
+        "cpu": "1 vCore",
+        "cpuDetail": "Intel Xeon Gold 6183",
+        "ram": "4 GB",
+        "ramDetail": "RAM",
+        "storage": "32 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳440",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-BD-2",
+        "name": "PULSE — 6GB",
+        "image": "/cpu/intel.png",
+        "cpu": "1 vCore",
+        "cpuDetail": "Intel Xeon Gold 6183",
+        "ram": "6 GB",
+        "ramDetail": "RAM",
+        "storage": "48 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳660",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-BD-3",
+        "name": "AURORA — 8GB",
+        "image": "/cpu/intel.png",
+        "cpu": "1.5 vCore",
+        "cpuDetail": "Intel Xeon Gold 6183",
+        "ram": "8 GB",
+        "ramDetail": "RAM",
+        "storage": "64 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳880",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-BD-4",
+        "name": "TITAN — 12GB",
+        "image": "/cpu/intel.png",
+        "cpu": "2 vCore",
+        "cpuDetail": "Intel Xeon Gold 6183",
+        "ram": "12 GB",
+        "ramDetail": "RAM",
+        "storage": "96 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳1,320",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-BD-5",
+        "name": "VORTEX — 16GB",
+        "image": "/cpu/intel.png",
+        "cpu": "2.5 vCore",
+        "cpuDetail": "Intel Xeon Gold 6183",
+        "ram": "16 GB",
+        "ramDetail": "RAM",
+        "storage": "128 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳1,760",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-BD-6",
+        "name": "PHOENIX — 24GB",
+        "image": "/cpu/intel.png",
+        "cpu": "3 vCore",
+        "cpuDetail": "Intel Xeon Gold 6183",
+        "ram": "24 GB",
+        "ramDetail": "RAM",
+        "storage": "192 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳2,640",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-BD-7",
+        "name": "INFINITY — 32GB",
+        "image": "/cpu/intel.png",
+        "cpu": "4 vCore",
+        "cpuDetail": "Intel Xeon Gold 6183",
+        "ram": "32 GB",
+        "ramDetail": "RAM",
+        "storage": "256 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳3,520",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      }
+    ],
+    "intel-platinum-8269cy": [
+      {
+        "id": "VPS-IN-1",
+        "name": "Plan 1 — 6GB",
+        "image": "/cpu/intel.png",
+        "cpu": "2 vCore",
+        "cpuDetail": "Intel Xeon Platinum 8269CY",
+        "ram": "6 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "60 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳494",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-IN-2",
+        "name": "Plan 2 — 8GB",
+        "image": "/cpu/intel.png",
+        "cpu": "2 vCore",
+        "cpuDetail": "Intel Xeon Platinum 8269CY",
+        "ram": "8 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "80 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳680",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-IN-3",
+        "name": "Plan 3 — 12GB",
+        "image": "/cpu/intel.png",
+        "cpu": "4 vCore",
+        "cpuDetail": "Intel Xeon Platinum 8269CY",
+        "ram": "12 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "100 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳865",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-IN-4",
+        "name": "Plan 4 — 16GB",
+        "image": "/cpu/intel.png",
+        "cpu": "6 vCore",
+        "cpuDetail": "Intel Xeon Platinum 8269CY",
+        "ram": "16 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "150 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳1,112",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-IN-5",
+        "name": "Plan 5 — 24GB",
+        "image": "/cpu/intel.png",
+        "cpu": "6 vCore",
+        "cpuDetail": "Intel Xeon Platinum 8269CY",
+        "ram": "24 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "200 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳1,729",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-IN-6",
+        "name": "Plan 6 — 32GB",
+        "image": "/cpu/intel.png",
+        "cpu": "8 vCore",
+        "cpuDetail": "Intel Xeon Platinum 8269CY",
+        "ram": "32 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "300 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳2,100",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-IN-7",
+        "name": "Plan 7 — 48GB",
+        "image": "/cpu/intel.png",
+        "cpu": "10 vCore",
+        "cpuDetail": "Intel Xeon Platinum 8269CY",
+        "ram": "48 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "350 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳2,841",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      },
+      {
+        "id": "VPS-IN-8",
+        "name": "Plan 8 — 64GB",
+        "image": "/cpu/intel.png",
+        "cpu": "12 vCore",
+        "cpuDetail": "Intel Xeon Platinum 8269CY",
+        "ram": "64 GB",
+        "ramDetail": "DDR4 ECC RAM",
+        "storage": "400 GB",
+        "storageDetail": "NVMe SSD",
+        "price": "৳3,458",
+        "period": "/mo",
+        "orderLink": "https://discord.piecore.xyz"
+      }
+    ]
+  }
+}
