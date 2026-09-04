@@ -1,22 +1,14 @@
 import { motion } from "framer-motion";
-import { Code2, Server, Brain, Terminal, Gamepad2, Globe, Zap, ChevronRight, Sparkles } from "lucide-react";
+import { ChevronRight, Sparkles } from "lucide-react";
+import { SiHtml5, SiCss, SiJavascript, SiNodedotjs, SiMongodb, SiPterodactyl } from "react-icons/si";
 
 const SKILLS = [
-  { label: "Full Stack Web Development", Icon: Code2,     color: "hsl(262,83%,70%)", acc: "hsl(262,83%,58%)" },
-  { label: "Frontend Development",       Icon: Globe,     color: "hsl(188,100%,55%)", acc: "hsl(188,100%,45%)" },
-  { label: "Backend Development",        Icon: Server,    color: "hsl(320,70%,70%)",  acc: "hsl(320,70%,55%)" },
-  { label: "Node.js Development",        Icon: Zap,       color: "hsl(130,60%,55%)",  acc: "hsl(130,60%,45%)" },
-  { label: "API Development",            Icon: Brain,     color: "hsl(262,83%,70%)", acc: "hsl(262,83%,58%)" },
-  { label: "Database Management",        Icon: Server,    color: "hsl(188,100%,55%)", acc: "hsl(188,100%,45%)" },
-  { label: "Linux Server Administration",Icon: Terminal,  color: "hsl(45,100%,60%)",  acc: "hsl(45,100%,50%)" },
-  { label: "Cloud Infrastructure",       Icon: Globe,     color: "hsl(200,80%,60%)",  acc: "hsl(200,80%,50%)" },
-  { label: "VPS & VDS Management",       Icon: Server,    color: "hsl(320,70%,70%)",  acc: "hsl(320,70%,55%)" },
-  { label: "Minecraft Server Dev",       Icon: Gamepad2,  color: "hsl(130,60%,55%)",  acc: "hsl(130,60%,45%)" },
-  { label: "Minecraft Network Config",   Icon: Gamepad2,  color: "hsl(150,60%,50%)",  acc: "hsl(150,60%,40%)" },
-  { label: "Hytale Server Dev",          Icon: Gamepad2,  color: "hsl(30,90%,60%)",   acc: "hsl(30,90%,50%)" },
-  { label: "Hosting Automation",         Icon: Zap,       color: "hsl(262,83%,70%)", acc: "hsl(262,83%,58%)" },
-  { label: "Panel Management",           Icon: Terminal,  color: "hsl(188,100%,55%)", acc: "hsl(188,100%,45%)" },
-  { label: "DevOps Fundamentals",        Icon: Server,    color: "hsl(45,100%,60%)",  acc: "hsl(45,100%,50%)" },
+  { label: "HTML",       Icon: SiHtml5,      color: "#E34F26", acc: "hsl(16,90%,50%)" },
+  { label: "CSS",        Icon: SiCss,        color: "#264DE4", acc: "hsl(228,74%,55%)" },
+  { label: "JavaScript", Icon: SiJavascript, color: "#F7DF1E", acc: "hsl(54,92%,50%)" },
+  { label: "Node.js",    Icon: SiNodedotjs,  color: "#339933", acc: "hsl(120,49%,40%)" },
+  { label: "MongoDB",    Icon: SiMongodb,    color: "#47A248", acc: "hsl(122,36%,45%)" },
+  { label: "Pterodactyl",Icon: SiPterodactyl,color: "#5865F2", acc: "hsl(235,86%,68%)" },
 ];
 
 export function Founder() {
@@ -31,12 +23,12 @@ export function Founder() {
 
       <div className="container mx-auto px-6">
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-          <div className="mb-4"><span className="section-tag">06 — Founder</span></div>
+          <div className="mb-4"><span className="section-tag">05 — Founder</span></div>
           <h2 id="founder-heading" className="section-title text-white mb-4">
             About <span className="gradient-text">Afifayan</span>
           </h2>
           <p className="text-white/40 text-lg mb-20 max-w-xl">
-            Developer and Founder of PieCore™ Cloud Hosting.
+            Beginner developer and Founder of PieCore™ Cloud Hosting.
           </p>
         </motion.div>
 
@@ -73,7 +65,7 @@ export function Founder() {
                 <div className="flex-1">
                   <div className="flex items-center gap-2 mb-1">
                     <Sparkles className="w-4 h-4 text-purple-400" />
-                    <span className="font-mono text-xs text-purple-400/70 tracking-widest uppercase">Developer & Founder</span>
+                    <span className="font-mono text-xs text-purple-400/70 tracking-widest uppercase">Beginner Developer</span>
                   </div>
                   <h3 className="font-display font-bold text-2xl text-white mb-1">Afifayan</h3>
                   <p className="font-mono text-sm text-purple-400/80">Founder · PieCore™ Cloud Hosting</p>
@@ -83,31 +75,23 @@ export function Founder() {
                       style={{ borderColor: "hsl(188,100%,50%,0.35)", background: "hsl(188,100%,50%,0.08)", color: "hsl(188,100%,62%)", boxShadow: "0 0 12px hsl(188,100%,50%,0.1)" }}>
                       ☁️ piecore.xyz
                     </a>
-                    <span className="inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1 rounded-full border"
-                      style={{ borderColor: "hsl(130,60%,55%,0.3)", background: "hsl(130,60%,55%,0.07)", color: "hsl(130,60%,65%)" }}>
-                      🎮 Minecraft Dev
-                    </span>
-                    <span className="inline-flex items-center gap-1.5 font-mono text-xs px-3 py-1 rounded-full border"
-                      style={{ borderColor: "hsl(30,90%,60%,0.3)", background: "hsl(30,90%,60%,0.07)", color: "hsl(30,90%,65%)" }}>
-                      🎯 Hytale Dev
-                    </span>
                   </div>
                 </div>
               </div>
 
               <div className="mt-6 pt-6 border-t border-white/5">
                 <p className="text-white/55 leading-relaxed text-base">
-                  Afifayan is a developer and the Founder of PieCore™ Cloud Hosting. He specializes in web development,
-                  hosting infrastructure, Minecraft server development, Hytale server development, and server management.
-                  His work focuses on building modern web platforms, scalable hosting solutions, custom game server systems,
-                  and reliable cloud infrastructure.
+                  Afifayan is a beginner developer and the Founder of PieCore™ Cloud Hosting.
+                  He's currently learning HTML, CSS, JavaScript, Node.js, and MongoDB, and
+                  experimenting with server hosting using Pterodactyl. He's continuously
+                  improving his skills by working on personal projects.
                 </p>
               </div>
             </div>
 
             {/* Skill list */}
             <div>
-              <p className="font-mono text-xs text-white/20 tracking-widest uppercase mb-5">Full Skill Set</p>
+              <p className="font-mono text-xs text-white/20 tracking-widest uppercase mb-5">Skills</p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {SKILLS.map((s, i) => (
                   <motion.div key={s.label}
@@ -148,7 +132,7 @@ export function Founder() {
             <div className="relative rounded-2xl p-[1px]"
               style={{ background: "linear-gradient(135deg,hsl(262,83%,58%,0.6),hsl(320,70%,65%,0.4),hsl(188,100%,50%,0.5))" }}>
               <div className="rounded-2xl overflow-hidden relative">
-                <img src="/assets/profile.png" alt="Afifayan — Full Stack Developer & Founder of PieCore™"
+                <img src="/assets/profile.png" alt="Afifayan — Beginner Developer & Founder of PieCore™"
                   className="w-full object-cover object-top" style={{ aspectRatio: "4/5" }}
                   loading="lazy" decoding="async"
                   onError={(e) => {

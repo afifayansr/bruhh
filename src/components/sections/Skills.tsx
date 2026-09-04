@@ -1,26 +1,12 @@
 import { motion } from "framer-motion";
 import {
-  SiReact,
-  SiNextdotjs,
-  SiTypescript,
-  SiNodedotjs,
-  SiTailwindcss,
-  SiMongodb,
-  SiPostgresql,
-  SiRedis,
-  SiDocker,
-  SiGit,
-  SiLinux,
-  SiNginx,
-  SiCloudflare,
-  SiVite,
   SiHtml5,
   SiCss,
   SiJavascript,
-  SiFramer,
-  SiGithubactions,
+  SiNodedotjs,
+  SiMongodb,
+  SiPterodactyl,
 } from "react-icons/si";
-import { Server, Globe, Database, Gamepad2, Code2, Palette, Brain } from "lucide-react";
 import type { ComponentType, CSSProperties } from "react";
 
 function hexToRgba(hex: string, alpha: number): string {
@@ -48,14 +34,9 @@ const CATEGORIES: Category[] = [
     label: "Frontend",
     color: "hsl(188,100%,55%)",
     skills: [
-      { name: "React", Icon: SiReact, color: "#61DAFB" },
-      { name: "Next.js", Icon: SiNextdotjs, color: "#ffffff" },
+      { name: "HTML", Icon: SiHtml5, color: "#E34F26" },
+      { name: "CSS", Icon: SiCss, color: "#264DE4" },
       { name: "JavaScript", Icon: SiJavascript, color: "#F7DF1E" },
-      { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
-      { name: "Tailwind CSS", Icon: SiTailwindcss, color: "#06B6D4" },
-      { name: "HTML5", Icon: SiHtml5, color: "#E34F26" },
-      { name: "CSS3", Icon: SiCss, color: "#264DE4" },
-      { name: "Framer Motion", Icon: SiFramer, color: "#0055FF" },
     ],
   },
   {
@@ -63,11 +44,6 @@ const CATEGORIES: Category[] = [
     color: "hsl(262,83%,70%)",
     skills: [
       { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
-      { name: "Express", Icon: Code2, color: "#8B5CF6" },
-      { name: "REST APIs", Icon: Globe, color: "#60A5FA" },
-      { name: "WebSockets", Icon: Server, color: "#A78BFA" },
-      { name: "GraphQL", Icon: Code2, color: "#E5008A" },
-      { name: "JWT Auth", Icon: Code2, color: "#F7DF1E" },
     ],
   },
   {
@@ -75,43 +51,13 @@ const CATEGORIES: Category[] = [
     color: "hsl(320,70%,70%)",
     skills: [
       { name: "MongoDB", Icon: SiMongodb, color: "#47A248" },
-      { name: "PostgreSQL", Icon: SiPostgresql, color: "#336791" },
-      { name: "Redis", Icon: SiRedis, color: "#DC3A28" },
-      { name: "Database Design", Icon: Database, color: "#A78BFA" },
     ],
   },
   {
     label: "Hosting / Infrastructure",
     color: "hsl(45,100%,60%)",
     skills: [
-      { name: "Linux", Icon: SiLinux, color: "#FCC624" },
-      { name: "Nginx", Icon: SiNginx, color: "#009639" },
-      { name: "Docker", Icon: SiDocker, color: "#2496ED" },
-      { name: "Cloudflare", Icon: SiCloudflare, color: "#F48120" },
-      { name: "VPS / VDS", Icon: Server, color: "#A78BFA" },
-      { name: "Git", Icon: SiGit, color: "#F05032" },
-      { name: "CI/CD", Icon: SiGithubactions, color: "#6e5494" },
-    ],
-  },
-  {
-    label: "Game Dev",
-    color: "hsl(130,60%,55%)",
-    skills: [
-      { name: "Minecraft Dev", Icon: Gamepad2, color: "#4CAF50" },
-      { name: "BungeeCord", Icon: Server, color: "#8BC34A" },
-      { name: "Velocity", Icon: Server, color: "#66BB6A" },
-      { name: "Hytale Dev", Icon: Gamepad2, color: "#FFB300" },
-      { name: "Plugin Dev", Icon: Code2, color: "#9CCC65" },
-    ],
-  },
-  {
-    label: "Other",
-    color: "hsl(200,80%,60%)",
-    skills: [
-      { name: "Vite", Icon: SiVite, color: "#646CFF" },
-      { name: "UI/UX Design", Icon: Palette, color: "#EC4899" },
-      { name: "System Design", Icon: Brain, color: "#06B6D4" },
-      { name: "DevOps", Icon: Server, color: "#15B886" },
+      { name: "Pterodactyl", Icon: SiPterodactyl, color: "#5865F2" },
     ],
   },
 ];
@@ -133,8 +79,8 @@ export function Skills() {
             Technical <span className="gradient-text">Skills</span>
           </h2>
           <p className="text-white/40 text-lg mb-16 max-w-xl">
-            Specialized across web development, backend systems, databases,
-            hosting infrastructure, and game server engineering.
+            The tools I'm currently learning and building with. Still growing
+            this list as I take on new projects.
           </p>
         </motion.div>
 

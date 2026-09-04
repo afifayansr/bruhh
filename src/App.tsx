@@ -11,7 +11,6 @@ import { MusicPlayer } from "@/components/layout/MusicPlayer";
 import { Hero } from "@/components/sections/Hero";
 import { About } from "@/components/sections/About";
 import { Skills } from "@/components/sections/Skills";
-import { Projects } from "@/components/sections/Projects";
 import { Services } from "@/components/sections/Services";
 import { Founder } from "@/components/sections/Founder";
 import { Experience } from "@/components/sections/Experience";
@@ -55,7 +54,6 @@ function PortfolioHome() {
             <About />
             <Services />
             <Skills />
-            <Projects />
             <Experience />
             <Founder />
             <Contact />

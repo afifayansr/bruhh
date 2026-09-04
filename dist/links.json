@@ -1,7 +1,7 @@
 [
-  { "id": 1, "label": "Discord", "url": "https://discord.gg/piecore", "icon": "discord", "sortOrder": 0 },
-  { "id": 2, "label": "GitHub", "url": "https://github.com/afifayanf", "icon": "github", "sortOrder": 1 },
-  { "id": 3, "label": "YouTube", "url": "https://youtube.com/@piecore", "icon": "youtube", "sortOrder": 2 },
+  { "id": 1, "label": "Discord", "url": "https://discord.gg/rUxZzswQXW", "icon": "discord", "sortOrder": 0 },
+  { "id": 2, "label": "GitHub", "url": "https://github.com/afifayansr", "icon": "github", "sortOrder": 1 },
+  { "id": 3, "label": "YouTube", "url": "https://youtube.com/@nota", "icon": "youtube", "sortOrder": 2 },
   { "id": 4, "label": "Twitter", "url": "https://twitter.com/afifayan", "icon": "twitter", "sortOrder": 3 },
   { "id": 5, "label": "Email", "url": "mailto:info@afifayan.fun", "icon": "mail", "sortOrder": 4 }
 ]

@@ -1,41 +1,23 @@
 import { motion } from "framer-motion";
-import { Code2, Palette, Server, Gamepad2, Bot, Settings } from "lucide-react";
+import { Code2, Server, Database } from "lucide-react";
 
 const SERVICES = [
   {
     Icon: Code2,
-    title: "Full Stack Development",
-    desc: "Modern full-stack web applications with React, Next.js, Node.js, and TypeScript. REST APIs, database design, responsive UIs, and clean, scalable architecture.",
+    title: "Web Development",
+    desc: "Building simple, responsive websites and interfaces with HTML, CSS, and JavaScript.",
     color: "hsl(262,83%,65%)",
   },
   {
-    Icon: Palette,
-    title: "Web Design",
-    desc: "Pixel-perfect, responsive UI/UX design with Tailwind CSS, Framer Motion animations, and modern design systems. From wireframes to production interfaces.",
+    Icon: Server,
+    title: "Backend Basics",
+    desc: "Learning to build small backend services and APIs with Node.js.",
     color: "hsl(188,100%,55%)",
   },
   {
-    Icon: Server,
-    title: "Hosting Infrastructure",
-    desc: "Complete VPS/VDS deployment, server configuration, Nginx/Apache setup, SSL, DDoS protection, and Cloudflare integration for production workloads.",
-    color: "hsl(320,70%,65%)",
-  },
-  {
-    Icon: Gamepad2,
-    title: "Minecraft Development",
-    desc: "Custom Minecraft server setup, network configuration (BungeeCord/Velocity), plugin integration, and performance optimization for game server networks.",
-    color: "hsl(130,60%,55%)",
-  },
-  {
-    Icon: Bot,
-    title: "Discord Bot Development",
-    desc: "Full-featured Discord bots with web dashboards. Moderation, custom commands, analytics, music systems, and automation for community servers.",
-    color: "hsl(235,86%,68%)",
-  },
-  {
-    Icon: Settings,
-    title: "Custom Software",
-    desc: "Bespoke software solutions including control panels, automation tools, game server control interfaces, and infrastructure management systems.",
+    Icon: Database,
+    title: "Hosting & Databases",
+    desc: "Experimenting with MongoDB for data storage and Pterodactyl for server hosting.",
     color: "hsl(45,100%,60%)",
   },
 ];
@@ -61,14 +43,14 @@ export function Services() {
           transition={{ duration: 0.7 }}
         >
           <div className="mb-4">
-            <span className="section-tag">02 — Services</span>
+            <span className="section-tag">02 — What I Do</span>
           </div>
           <h2 className="section-title text-white mb-4">
-            What I <span className="gradient-text">Build</span>
+            What I'm <span className="gradient-text">Learning</span>
           </h2>
           <p className="text-white/40 text-lg mb-16 max-w-xl">
-            From web platforms to game server networks — professional
-            development and infrastructure services.
+            Still early in my journey — here's what I'm focused on building
+            and improving right now.
           </p>
         </motion.div>
 

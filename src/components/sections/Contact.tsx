@@ -54,15 +54,14 @@ export function Contact() {
           className="max-w-5xl mx-auto text-center"
         >
           <div className="mb-4">
-            <span className="section-tag">08 — Contact</span>
+            <span className="section-tag">06 — Contact</span>
           </div>
           <h2 className="section-title text-white mb-6">
             Get in <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-white/45 text-lg leading-relaxed mb-16 max-w-xl mx-auto">
-            Available for web development projects, hosting infrastructure work,
-            Minecraft server development, and game server consulting. Let's
-            build something together.
+            Feel free to reach out if you want to chat, collaborate, or just
+            say hi. I'm always happy to connect.
           </p>
 
           <div className="grid lg:grid-cols-2 gap-10">

@@ -1,30 +1,22 @@
 import { motion } from "framer-motion";
-import { Server, Gamepad2 } from "lucide-react";
+import { Server, Code2 } from "lucide-react";
 
 const TIMELINE = [
   {
     icon: Server,
     color: "hsl(262,83%,70%)",
-    title: "Founder & Infrastructure Lead",
+    title: "Founder",
     company: "PieCore™ Cloud Hosting",
     link: "https://piecore.xyz",
-    desc: "Founded and built PieCore™ — a game server and cloud hosting platform. Designed the infrastructure, automation systems, and customer panel from the ground up.",
+    desc: "Founded PieCore™, a hosting project built on Pterodactyl, and manage it alongside learning web development.",
   },
   {
-    icon: Gamepad2,
-    color: "hsl(130,60%,55%)",
-    title: "Minecraft Server Developer",
-    company: "Freelance & Personal Projects",
-    link: null,
-    desc: "Developed and managed Minecraft server networks including BungeeCord/Velocity proxy setups, custom plugin integration, network configuration, and performance optimization.",
-  },
-  {
-    icon: Gamepad2,
-    color: "hsl(30,90%,60%)",
-    title: "Hytale Server Developer",
+    icon: Code2,
+    color: "hsl(188,100%,55%)",
+    title: "Self-Taught Developer",
     company: "Personal Projects",
     link: null,
-    desc: "Researched and developed Hytale dedicated server infrastructure, modding systems, and community server architecture in preparation for the game's ecosystem.",
+    desc: "Learning HTML, CSS, JavaScript, Node.js, and MongoDB by building and experimenting with personal projects.",
   },
 ];
 
@@ -33,9 +25,9 @@ export function Experience() {
     <section id="experience" className="py-32 relative z-10">
       <div className="container mx-auto px-6">
         <motion.div initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.7 }}>
-          <div className="mb-4"><span className="section-tag">05 — Experience</span></div>
-          <h2 className="section-title text-white mb-4">Development <span className="gradient-text">Experience</span></h2>
-          <p className="text-white/40 text-lg mb-16 max-w-xl">Projects and roles across web development, hosting infrastructure, and game server engineering.</p>
+          <div className="mb-4"><span className="section-tag">04 — Experience</span></div>
+          <h2 className="section-title text-white mb-4">My <span className="gradient-text">Journey</span></h2>
+          <p className="text-white/40 text-lg mb-16 max-w-xl">A quick look at what I've been doing while learning to code.</p>
         </motion.div>
 
         <div className="relative max-w-2xl">

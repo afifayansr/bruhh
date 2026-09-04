@@ -5,11 +5,10 @@ import { useSite } from "@/lib/SiteContext";
 import { iconFor } from "@/lib/icons";
 
 const ROLES = [
-  "MERN Stack Developer",
-  "Full Stack Web Developer",
-  "Software Maker",
-  "Web Designer",
-  "Student",
+  "Beginner Developer",
+  "Learning Web Development",
+  "Node.js & MongoDB",
+  "Founder of PieCore™",
 ];
 
 function Typewriter({ words, speed = 80, pause = 1800 }: { words: string[]; speed?: number; pause?: number }) {
@@ -74,7 +73,7 @@ function ProfileTilt() {
     >
       <motion.img
         src="/assets/profile.png"
-        alt="Afifayan — MERN Stack Developer & Founder of PieCore™"
+        alt="Afifayan — Beginner Developer & Founder of PieCore™"
         style={{
           rotateX: sy,
           rotateY: sx,
@@ -258,9 +257,9 @@ export function Hero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.55 }}
             >
-              MERN Stack Developer and Founder of PieCore™ Cloud Hosting. I build
-              full-stack web applications, Discord bots, Minecraft server
-              infrastructure, and scalable cloud hosting solutions.
+              Beginner developer and Founder of PieCore™ Cloud Hosting. I'm
+              learning to build with HTML, CSS, JavaScript, Node.js, and
+              MongoDB — and experimenting with server hosting on Pterodactyl.
             </motion.p>
 
             <motion.div
@@ -270,11 +269,11 @@ export function Hero() {
               transition={{ delay: 0.65 }}
             >
               <a
-                href="#projects"
+                href="#about"
                 className="btn-primary text-white rounded-sm flex items-center gap-2"
               >
                 <span className="relative z-10 flex items-center gap-2">
-                  <FolderGit2 className="w-4 h-4" /> View Projects{" "}
+                  <FolderGit2 className="w-4 h-4" /> More About Me{" "}
                   <ChevronRight className="w-4 h-4" />
                 </span>
               </a>
