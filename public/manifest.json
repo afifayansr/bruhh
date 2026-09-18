@@ -1,0 +1,23 @@
+{
+  "name": "VyperBD — Best Minecraft Hosting Bangladesh",
+  "short_name": "VyperBD",
+  "description": "Bangladesh's best Minecraft hosting. Game servers, VPS & web hosting powered by VyperBD's own infrastructure.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#080B10",
+  "theme_color": "#22C55E",
+  "lang": "en",
+  "icons": [
+    { "src": "/meta/Logo.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/meta/Logo.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" }
+  ],
+  "screenshots": [
+    {
+      "src": "/meta/Logo.png",
+      "sizes": "1254x1254",
+      "type": "image/png",
+      "label": "VyperBD — Best Minecraft Hosting in Bangladesh"
+    }
+  ]
+}
