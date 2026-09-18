@@ -26,6 +26,18 @@
       "hasDropdown": false
     },
     {
+      "name": "WebHosting",
+      "href": "/webhosting",
+      "icon": "GrServerCluster",
+      "hasDropdown": false
+    },
+    {
+      "name": "Staff",
+      "href": "/staff",
+      "icon": "Users",
+      "hasDropdown": false
+    },
+    {
       "name": "Legal",
       "href": "/terms-of-services",
       "icon": "FileText",
@@ -48,13 +60,13 @@
   "socialLinks": [
     {
       "name": "Discord",
-      "href": "https://discord.piecore.xyz",
+      "href": "https://discord.vyperbd.cloud",
       "icon": "discord"
     }
   ],
   "clientSpace": {
     "name": "CLIENT SPACE",
-    "href": "https://i.piecore.xyz",
+    "href": "https://my.vyperbd.cloud",
     "icon": "User"
   },
   "banner": {

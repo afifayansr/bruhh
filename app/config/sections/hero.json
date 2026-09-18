@@ -1,14 +1,11 @@
 {
   "navbar": {
-    "logo": "/banners/PieCore-Banner.webp",
-    "brandName": "Pie",
-    "brandAccent": "Core"
+    "logo": "/banners/VyperBD-Logo.png",
+    "brandName": "Vyper",
+    "brandAccent": "BD"
   },
   "hero": {
-    "title": {
-      "suffixColor": "white",
-      "gameNameColor": "blue"
-    },
+    "title": "Bangladesh's #1 Minecraft Hosting",
     "games": [
       {
         "id": "minecraft-java",
@@ -75,10 +72,16 @@
         "loading": "lazy"
       },
       {
-        "name": "PieCore",
-        "src": "/banners/PieCore-Banner.webp",
+        "name": "VyperBD",
+        "src": "/banners/VyperBD-Banner.webp",
         "loading": "lazy"
       }
-    ]
+    ],
+    "highlight": "Powered by Our Own Infrastructure",
+    "description": "Premium Minecraft hosting, game servers, VPS and web hosting across Bangladesh BDIX, India, Singapore, Japan & USA — all powered by VyperBD's own global infrastructure.",
+    "badge1": "Own Infrastructure",
+    "badge2": "BDIX Bangladesh",
+    "badge3": "DDoS Protected",
+    "badge4": "NVMe SSD"
   }
 }

@@ -11,8 +11,8 @@ export default function Footer() {
   const { t } = useLanguage()
 
   const quickLinks = [
-    { name: t('footer.clientArea'), href: "#" },
-    { name: t('footer.discord'), href: "#" },
+    { name: t('footer.clientArea'), href: "https://my.vyperbd.cloud" },
+    { name: t('footer.discord'), href: "https://discord.vyperbd.cloud" },
     { name: t('footer.vpsHosting'), href: "/vps" },
     { name: t('footer.dedicatedServerHosting'), href: "/dedicated" },
     { name: t('footer.gameServerHosting'), href: "/games" },
@@ -24,9 +24,9 @@ export default function Footer() {
   ]
 
   const contactInfo = [
-    { icon: Mail, label: t('footer.email'), value: "support@piecore.xyz", href: "mailto:support@piecore.xyz" },
+    { icon: Mail, label: t('footer.email'), value: "support@vyperbd.cloud", href: "mailto:support@vyperbd.cloud" },
     { icon: Phone, label: t('footer.phone'), value: "N/A", href: "tel:+15551234567" },
-    { icon: Gamepad2, label: t('footer.gamePanel'), value: "panel.piecore.xyz", href: "https://panel.piecore.xyz" },
+    { icon: Gamepad2, label: t('footer.gamePanel'), value: "panel.vyperbd.cloud", href: "https://panel.vyperbd.cloud" },
   ]
 
   return (
@@ -48,7 +48,7 @@ export default function Footer() {
               <div className="mb-6">
                 <Image
                   src="/meta/Logo.png"
-                  alt="PieCore Logo"
+                  alt="VyperBD Logo"
                   width={200}
                   height={60}
                   className="h-12 w-auto"
@@ -140,7 +140,7 @@ export default function Footer() {
           >
             <div className="flex flex-col md:flex-row justify-between items-center">
               <div className="text-gray-500 dark:text-gray-500 text-sm mb-4 md:mb-0">
-                © PieCore 2025-2026. All rights reserved.
+                © VyperBD 2025-2026. All rights reserved.
               </div>
               <div className="flex items-center space-x-6">
                 <div className="text-gray-500 dark:text-gray-500 text-sm">

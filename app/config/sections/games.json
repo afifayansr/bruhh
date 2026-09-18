@@ -1,9 +1,19 @@
 {
   "planTypes": [
     {
-      "id": "budget",
-      "name": "Standard NVMe",
-      "image": "/cpu/intel.png"
+      "id": "bdix",
+      "name": "Premium BDIX",
+      "image": "/icons/minecraft-icon.webp"
+    },
+    {
+      "id": "india",
+      "name": "Premium INDIA",
+      "image": "/icons/minecraft-icon.webp"
+    },
+    {
+      "id": "deluxe",
+      "name": "MC Deluxe (Ryzen 9)",
+      "image": "/icons/minecraft-icon.webp"
     }
   ],
   "locations": [
@@ -12,272 +22,367 @@
       "name": "Bangladesh (BDIX)",
       "flag": "/flags/bangladesh.svg",
       "availablePlanTypes": [
-        "budget"
+        "bdix"
       ]
     },
     {
-      "id": "singapore",
-      "name": "Singapore (SG)",
-      "flag": "/flags/singapore.png",
+      "id": "india",
+      "name": "India",
+      "flag": "/flags/india.png",
       "availablePlanTypes": [
-        "budget"
+        "india"
+      ]
+    },
+    {
+      "id": "bdix-deluxe",
+      "name": "Bangladesh BDIX (Ryzen 9)",
+      "flag": "/flags/bangladesh.svg",
+      "availablePlanTypes": [
+        "deluxe"
       ]
     }
   ],
   "games": [
     {
-      "id": "minecraft-java",
-      "name": "Minecraft Java",
-      "description": "Bangladesh BDIX-routed Java Edition servers with uncapped CPU and NVMe storage",
+      "id": "minecraft-bdix",
+      "name": "Premium Minecraft BDIX",
+      "description": "High-performance Minecraft hosting with NVMe storage, flexible resources, backups, databases, and BDIX connectivity.",
       "icon": "/icons/minecraft-icon.webp",
       "banner": "/banners/minecraft-banners.webp",
       "featured": true,
-      "startingAt": "৳206.5/mo",
-      "primaryColor": "#4CAF50",
+      "startingAt": "৳70/mo",
+      "primaryColor": "#22C55E",
       "plans": {
-        "budget": [
+        "bdix": [
           {
-            "id": "minecraft-java-1",
-            "name": "Willow 2GB",
-            "type": "budget",
+            "id": "bdix-dirt",
+            "name": "Dirt Package",
+            "badge": "Proxy Hosting",
+            "available": 30,
+            "ram": "512 MB",
+            "cpu": "200% CPU",
+            "storage": "2 GB NVMe",
+            "backups": "2 Server Backups",
+            "databases": "1 Database",
+            "ports": null,
+            "price": 70,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-bdix"
+          },
+          {
+            "id": "bdix-wood",
+            "name": "Wood Package",
+            "badge": "",
+            "available": 29,
             "ram": "2 GB",
-            "cpu": "Uncapped CPU",
-            "storage": "16GB NVMe M.2 SSD",
-            "price": 206.5,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+            "cpu": "200% CPU",
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 200,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-bdix"
           },
           {
-            "id": "minecraft-java-2",
-            "name": "Quartz 4GB",
-            "type": "budget",
+            "id": "bdix-stone",
+            "name": "Stone Package",
+            "badge": "",
+            "available": 30,
             "ram": "4 GB",
-            "cpu": "Uncapped CPU",
-            "storage": "32GB NVMe M.2 SSD",
-            "price": 412,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+            "cpu": "300% CPU",
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 400,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-bdix"
           },
           {
-            "id": "minecraft-java-3",
-            "name": "Coal 6GB",
-            "type": "budget",
+            "id": "bdix-iron",
+            "name": "Iron Package",
+            "badge": "",
+            "available": 23,
             "ram": "6 GB",
-            "cpu": "Uncapped CPU",
-            "storage": "48GB NVMe M.2 SSD",
-            "price": 618,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+            "cpu": "400% CPU",
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 600,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-bdix"
           },
           {
-            "id": "minecraft-java-4",
-            "name": "Emerald 8GB",
-            "type": "budget",
+            "id": "bdix-gold",
+            "name": "Gold Package",
+            "badge": "",
+            "available": 21,
             "ram": "8 GB",
             "cpu": "Uncapped CPU",
-            "storage": "64GB NVMe M.2 SSD",
-            "price": 824,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 820,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-bdix"
           },
           {
-            "id": "minecraft-java-5",
-            "name": "Redstone 10GB",
-            "type": "budget",
-            "ram": "10 GB",
-            "cpu": "Uncapped CPU",
-            "storage": "80GB NVMe M.2 SSD",
-            "price": 1030,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
-          },
-          {
-            "id": "minecraft-java-6",
-            "name": "Lapis 12GB",
-            "type": "budget",
+            "id": "bdix-redstone",
+            "name": "Redstone Package",
+            "badge": "",
+            "available": 30,
             "ram": "12 GB",
             "cpu": "Uncapped CPU",
-            "storage": "96GB NVMe M.2 SSD",
-            "price": 1236,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 1200,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-bdix"
           },
           {
-            "id": "minecraft-java-7",
-            "name": "Obsidian 16GB",
-            "type": "budget",
+            "id": "bdix-emerald",
+            "name": "Emerald Package",
+            "badge": "",
+            "available": 30,
+            "ram": "14 GB",
+            "cpu": "Uncapped CPU",
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 1410,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-bdix"
+          },
+          {
+            "id": "bdix-netherite",
+            "name": "Netherite Package",
+            "badge": "",
+            "available": 18,
             "ram": "16 GB",
             "cpu": "Uncapped CPU",
-            "storage": "128GB NVMe M.2 SSD",
-            "price": 1648,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 1680,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-bdix"
           },
           {
-            "id": "minecraft-java-8",
-            "name": "Netherite 18GB",
-            "type": "budget",
-            "ram": "18 GB",
-            "cpu": "Uncapped CPU",
-            "storage": "144GB NVMe M.2 SSD",
-            "price": 1854,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
-          },
-          {
-            "id": "minecraft-java-9",
-            "name": "Diamond 32GB",
-            "type": "budget",
+            "id": "bdix-vyper",
+            "name": "Vyper Package",
+            "badge": "TOP",
+            "available": 20,
             "ram": "32 GB",
             "cpu": "Uncapped CPU",
-            "storage": "256GB NVMe M.2 SSD",
-            "price": 3296,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-bdix-java"
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 3100,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-bdix",
+            "featured": true
           }
         ],
-        "premium": []
-      }
-    },
-    {
-      "id": "minecraft-bedrock",
-      "name": "Minecraft Bedrock",
-      "description": "Bangladesh BDIX DDR5-powered Bedrock Edition servers with dedicated CPU cores",
-      "icon": "/icons/minecraft-icon.webp",
-      "banner": "/banners/minecraft-banners.webp",
-      "featured": true,
-      "startingAt": "৳190/mo",
-      "primaryColor": "#00BCD4",
-      "plans": {
-        "budget": [
+        "india": [
           {
-            "id": "minecraft-bedrock-1",
-            "name": "Quartz 2GB",
-            "type": "budget",
-            "ram": "2 GB DDR5",
-            "cpu": "1 Dedicated CPU Core",
-            "storage": "16GB NVMe SSD",
-            "price": 190,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
-          },
-          {
-            "id": "minecraft-bedrock-2",
-            "name": "Gold 4GB",
-            "type": "budget",
-            "ram": "4 GB DDR5",
-            "cpu": "150% CPU (1.5 Cores)",
-            "storage": "32GB NVMe SSD",
-            "price": 560,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
-          },
-          {
-            "id": "minecraft-bedrock-3",
-            "name": "Diamond 6GB",
-            "type": "budget",
-            "ram": "6 GB DDR5",
-            "cpu": "200% CPU (2 Cores)",
-            "storage": "48GB NVMe SSD",
-            "price": 570,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
-          },
-          {
-            "id": "minecraft-bedrock-4",
-            "name": "Netherite 8GB",
-            "type": "budget",
-            "ram": "8 GB DDR5",
-            "cpu": "250% CPU (2.5 Cores)",
-            "storage": "64GB NVMe SSD",
-            "price": 760,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
-          },
-          {
-            "id": "minecraft-bedrock-5",
-            "name": "Ender Dragon 12GB",
-            "type": "budget",
-            "ram": "12 GB DDR5",
-            "cpu": "300% CPU (3 Cores)",
-            "storage": "96GB NVMe SSD",
-            "price": 1140,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
-          },
-          {
-            "id": "minecraft-bedrock-6",
-            "name": "Warden 16GB",
-            "type": "budget",
-            "ram": "16 GB DDR5",
-            "cpu": "400% CPU (4 Cores)",
-            "storage": "128GB NVMe SSD",
-            "price": 1520,
-            "orderLink": "https://i.piecore.xyz/client/index.php/store/minecraft-ddr5-bedrock-bdix"
-          }
-        ],
-        "premium": []
-      }
-    },
-    {
-      "id": "minecraft-singapore",
-      "name": "Minecraft Singapore",
-      "description": "Ultra-low latency Singapore-routed Minecraft hosting on premium SG infrastructure",
-      "icon": "/icons/minecraft-icon.webp",
-      "banner": "/banners/minecraft-banners.webp",
-      "featured": false,
-      "startingAt": "৳614/mo",
-      "primaryColor": "#3F51B5",
-      "plans": {
-        "budget": [
-          {
-            "id": "minecraft-sg-1",
-            "name": "Prismarine 6GB",
-            "type": "budget",
+            "id": "india-dirt",
+            "name": "Dirt Package",
+            "available": 48,
             "ram": "6 GB",
-            "cpu": "Uncapped CPU (SG Routing)",
-            "storage": "48GB NVMe M.2 SSD",
-            "price": 614,
-            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+            "cpu": "200% CPU",
+            "storage": "30 GB NVMe",
+            "backups": "2 Server Backups",
+            "databases": "1 Database",
+            "price": 390,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-india"
           },
           {
-            "id": "minecraft-sg-2",
-            "name": "Amethyst 8GB",
-            "type": "budget",
+            "id": "india-stone",
+            "name": "Stone Package",
+            "available": 50,
             "ram": "8 GB",
-            "cpu": "Uncapped CPU (SG Routing)",
-            "storage": "64GB NVMe M.2 SSD",
-            "price": 828,
-            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+            "cpu": "300% CPU",
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 535,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-india"
           },
           {
-            "id": "minecraft-sg-3",
-            "name": "Beacon 12GB",
-            "type": "budget",
+            "id": "india-iron",
+            "name": "Iron Package",
+            "available": 27,
             "ram": "12 GB",
-            "cpu": "Uncapped CPU (SG Routing)",
-            "storage": "96GB NVMe M.2 SSD",
-            "price": 1160,
-            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+            "cpu": "Uncapped CPU",
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 985,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-india"
           },
           {
-            "id": "minecraft-sg-4",
-            "name": "Dragon 16GB",
-            "type": "budget",
+            "id": "india-emerald",
+            "name": "Emerald Package",
+            "available": 50,
             "ram": "16 GB",
-            "cpu": "Uncapped CPU (SG Routing)",
-            "storage": "128GB NVMe M.2 SSD",
-            "price": 1492,
-            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+            "cpu": "Uncapped CPU",
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 1300,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-india"
           },
           {
-            "id": "minecraft-sg-5",
-            "name": "Warden 20GB",
-            "type": "budget",
-            "ram": "20 GB",
-            "cpu": "Uncapped CPU (SG Routing)",
-            "storage": "160GB NVMe M.2 SSD",
-            "price": 1824,
-            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
-          },
-          {
-            "id": "minecraft-sg-6",
-            "name": "Bedrock 32GB",
-            "type": "budget",
+            "id": "india-netherite",
+            "name": "Netherite Package",
+            "available": 50,
             "ram": "32 GB",
-            "cpu": "Uncapped CPU (SG Routing)",
-            "storage": "256GB NVMe M.2 SSD",
-            "price": 2820,
-            "orderLink": "https://discord.com/channels/1519315274648780871/1536730018128855060"
+            "cpu": "Uncapped CPU",
+            "storage": "Unlimited NVMe",
+            "vmem": "5 GB Virtual Memory",
+            "backups": "3 Server Backups",
+            "databases": "1 Database",
+            "ports": "3 Port Allocations",
+            "price": 1600,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/premium-minecraft-india",
+            "featured": true
           }
         ],
-        "premium": []
+        "deluxe": [
+          {
+            "id": "dlx-gravel",
+            "name": "Gravel Plan",
+            "available": 30,
+            "ram": "4 GB DDR4 ECC",
+            "cpu": "180% CPU (1.8 vCore)",
+            "storage": "25 GB NVMe",
+            "ports": "2 Additional Ports",
+            "databases": "4 Databases",
+            "backups": "2 Backups",
+            "price": 520,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/minecraft-hosting-deluxe",
+            "extras": [
+              "Premium Game Panel",
+              "Advanced DDoS Protection"
+            ]
+          },
+          {
+            "id": "dlx-andesite",
+            "name": "Andesite Plan",
+            "available": 30,
+            "ram": "5 GB DDR5 ECC",
+            "cpu": "200% CPU (2 vCore)",
+            "storage": "30 GB NVMe",
+            "ports": "2 Additional Ports",
+            "databases": "4 Databases",
+            "backups": "2 Backups",
+            "price": 650,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/minecraft-hosting-deluxe",
+            "extras": [
+              "Premium Game Panel",
+              "Advanced DDoS Protection"
+            ]
+          },
+          {
+            "id": "dlx-coal",
+            "name": "Coal Plan",
+            "available": 30,
+            "ram": "6 GB DDR5 ECC",
+            "cpu": "250% CPU (2.5 vCore)",
+            "storage": "36 GB NVMe",
+            "ports": "4 Additional Ports",
+            "databases": "4 Databases",
+            "backups": "3 Backups",
+            "price": 780,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/minecraft-hosting-deluxe",
+            "extras": [
+              "Premium Game Panel",
+              "Advanced DDoS Protection"
+            ]
+          },
+          {
+            "id": "dlx-iron",
+            "name": "Iron Plan",
+            "available": 30,
+            "ram": "7 GB DDR5 ECC",
+            "cpu": "280% CPU (2.8 vCore)",
+            "storage": "42 GB NVMe",
+            "ports": "4 Additional Ports",
+            "databases": "4 Databases",
+            "backups": "3 Backups",
+            "price": 910,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/minecraft-hosting-deluxe",
+            "extras": [
+              "Premium Game Panel",
+              "Advanced DDoS Protection"
+            ]
+          },
+          {
+            "id": "dlx-diamond",
+            "name": "Diamond Plan",
+            "available": 30,
+            "ram": "10 GB DDR5 ECC",
+            "cpu": "350% CPU (3.5 vCore)",
+            "storage": "60 GB NVMe",
+            "ports": "5 Additional Ports",
+            "databases": "6 Databases",
+            "backups": "4 Backups",
+            "price": 1300,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/minecraft-hosting-deluxe",
+            "extras": [
+              "Premium Game Panel",
+              "Advanced DDoS Protection"
+            ]
+          },
+          {
+            "id": "dlx-netherite",
+            "name": "Netherite Plan",
+            "available": 30,
+            "ram": "16 GB DDR5 ECC",
+            "cpu": "450% CPU (4.5 vCore)",
+            "storage": "96 GB NVMe",
+            "ports": "6 Additional Ports",
+            "databases": "8 Databases",
+            "backups": "5 Backups",
+            "price": 2080,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/minecraft-hosting-deluxe",
+            "extras": [
+              "Premium Game Panel",
+              "Advanced DDoS Protection"
+            ]
+          },
+          {
+            "id": "dlx-crystal",
+            "name": "Crystal Plan",
+            "available": 30,
+            "ram": "32 GB DDR5 ECC",
+            "cpu": "No CPU Limit",
+            "storage": "160 GB NVMe",
+            "ports": "8 Additional Ports",
+            "databases": "14 Databases",
+            "backups": "8 Backups",
+            "price": 4097,
+            "orderLink": "https://my.vyperbd.cloud/index.php/store/minecraft-hosting-deluxe",
+            "featured": true,
+            "extras": [
+              "Premium Game Panel",
+              "Advanced DDoS Protection"
+            ]
+          }
+        ]
       }
     }
   ]

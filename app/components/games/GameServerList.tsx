@@ -22,12 +22,12 @@ export default function GameServerList() {
   const { t } = useLanguage()
   const [selectedGame, setSelectedGame] = useState<string>(config.games[0]?.id || "")
   const [selectedLocation, setSelectedLocation] = useState<string>(config.locations[0]?.id || "")
-  const [selectedPlanType, setSelectedPlanType] = useState<"budget" | "premium">("budget")
+  const [selectedPlanType, setSelectedPlanType] = useState<string>(config.planTypes[0]?.id || "bdix")
 
   useEffect(() => {
     const game = searchParams.get("game")
     const location = searchParams.get("location")
-    const plan = searchParams.get("plan") as "budget" | "premium"
+    const plan = searchParams.get("plan")
 
     if (game && config.games.some((g: Game) => g.id === game)) {
       setSelectedGame(game)
@@ -35,7 +35,7 @@ export default function GameServerList() {
     if (location && config.locations.some((l) => l.id === location)) {
       setSelectedLocation(location)
     }
-    if (plan && ["budget", "premium"].includes(plan)) {
+    if (plan && config.planTypes.some((t) => t.id === plan)) {
       setSelectedPlanType(plan)
     }
   }, [searchParams])
@@ -56,7 +56,7 @@ export default function GameServerList() {
   const currentLocation = config.locations.find((loc) => loc.id === selectedLocation)
   const availablePlanTypes = currentLocation?.availablePlanTypes || []
 
-  const handlePlanTypeSelection = (planType: "budget" | "premium") => {
+  const handlePlanTypeSelection = (planType: string) => {
     setSelectedPlanType(planType)
     const currentLoc = config.locations.find((loc) => loc.id === selectedLocation)
     if (currentLoc && !currentLoc.availablePlanTypes.includes(planType)) {
@@ -72,7 +72,7 @@ export default function GameServerList() {
     const newLocation = config.locations.find((loc) => loc.id === locationId)
     if (newLocation && !newLocation.availablePlanTypes.includes(selectedPlanType)) {
       if (newLocation.availablePlanTypes.length > 0) {
-        setSelectedPlanType(newLocation.availablePlanTypes[0] as "budget" | "premium")
+        setSelectedPlanType(newLocation.availablePlanTypes[0])
       }
     }
   }
@@ -154,7 +154,7 @@ export default function GameServerList() {
                   return (
                     <button
                       key={type.id}
-                      onClick={() => handlePlanTypeSelection(type.id as "budget" | "premium")}
+                      onClick={() => handlePlanTypeSelection(type.id)}
                       disabled={!isAvailable}
                       className={`flex items-center gap-3 px-6 py-2  rounded-tl-xl rounded-br-xl font-medium transition-all duration-300 backdrop-blur-sm ${isSelected
                           ? "bg-[var(--game-color)]/10 border border-[var(--game-color)]/30 text-[var(--game-color)] shadow-lg backdrop-blur-sm"
@@ -284,49 +284,66 @@ export default function GameServerList() {
               style={{ "--game-color": currentGame?.primaryColor } as React.CSSProperties}
               className="relative overflow-hidden rounded-xl bg-white/10 dark:bg-gray-900/10 backdrop-blur-sm border border-[var(--game-color)]/30 hover:border-[var(--game-color)]/30 dark:hover:border-[var(--game-color)]/40 transition-all duration-300 hover:bg-[radial-gradient(50%_50%_at_50%_100%,rgba(255,255,255,0.05)_0%,transparent_100%)] dark:hover:bg-[radial-gradient(50%_50%_at_50%_100%,rgba(255,255,255,0.03)_0%,transparent_100%)]"
             >
-              {plan.type === "premium" && (
+              {(plan as any).featured && (
                 <div className="absolute top-4 right-4">
-                  <div className="px-2 py-1 text-xs font-medium rounded-full bg-white/20 dark:bg-[var(--game-color)]/10 backdrop-blur-sm text-[var(--game-color)]">
-                    {t('gameServerList.premium')}
+                  <div className="px-2 py-1 text-xs font-bold rounded-full bg-[var(--game-color)] text-white">
+                    VYPER
                   </div>
                 </div>
               )}
               <div className="p-6">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="relative w-8 h-8 rounded-md">
-                    <Image
-                      src={currentLocation?.flag || config.locations[0].flag}
-                      alt={`${currentLocation?.name || "Location"}`}
-                      fill
-                      sizes="32px"
-                      className="object-contain rounded-md"
-                    />
-                  </div>
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
+                <div className="flex items-center justify-between mb-1">
+                  <h3 className="text-lg font-bold text-gray-900 dark:text-white">{plan.name}</h3>
                 </div>
+                {(plan as any).available !== undefined && (
+                  <div className="flex items-center gap-1.5 mb-4">
+                    <span className="w-1.5 h-1.5 rounded-full bg-green-500 inline-block"></span>
+                    <span className="text-xs text-gray-500 dark:text-gray-400">{(plan as any).available} Available</span>
+                  </div>
+                )}
 
-                <div className="space-y-4 mb-6">
+                <div className="space-y-2.5 mb-6">
                   <div className="flex items-center gap-3">
-                    <MemoryStick className="w-5 h-5 text-[var(--game-color)]" />
-                    <span className="text-gray-600 dark:text-gray-300">{plan.ram} RAM</span>
+                    <MemoryStick className="w-4 h-4 text-[var(--game-color)] flex-shrink-0" />
+                    <span className="text-sm text-gray-600 dark:text-gray-300">{plan.ram} RAM</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <Cpu className="w-5 h-5 text-[var(--game-color)]" />
-                    <span className="text-gray-600 dark:text-gray-300">{plan.cpu} CPU</span>
+                    <Cpu className="w-4 h-4 text-[var(--game-color)] flex-shrink-0" />
+                    <span className="text-sm text-gray-600 dark:text-gray-300">{plan.cpu}</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <HardDrive className="w-5 h-5 text-[var(--game-color)]" />
-                    <span className="text-gray-600 dark:text-gray-300">{plan.storage}</span>
+                    <HardDrive className="w-4 h-4 text-[var(--game-color)] flex-shrink-0" />
+                    <span className="text-sm text-gray-600 dark:text-gray-300">{plan.storage}</span>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <Shield className="w-5 h-5 text-[var(--game-color)]" />
-                    <span className="text-gray-600 dark:text-gray-300">{t('gameServerList.ddosProtection')}</span>
-                  </div>
+                  {(plan as any).vmem && (
+                    <div className="flex items-center gap-3">
+                      <Shield className="w-4 h-4 text-[var(--game-color)] flex-shrink-0" />
+                      <span className="text-sm text-gray-600 dark:text-gray-300">{(plan as any).vmem}</span>
+                    </div>
+                  )}
+                  {(plan as any).backups && (
+                    <div className="flex items-center gap-3">
+                      <Shield className="w-4 h-4 text-[var(--game-color)] flex-shrink-0" />
+                      <span className="text-sm text-gray-600 dark:text-gray-300">{(plan as any).backups}</span>
+                    </div>
+                  )}
+                  {(plan as any).ports && (
+                    <div className="flex items-center gap-3">
+                      <Shield className="w-4 h-4 text-[var(--game-color)] flex-shrink-0" />
+                      <span className="text-sm text-gray-600 dark:text-gray-300">{(plan as any).ports}</span>
+                    </div>
+                  )}
+                  {(plan as any).databases && (
+                    <div className="flex items-center gap-3">
+                      <Shield className="w-4 h-4 text-[var(--game-color)] flex-shrink-0" />
+                      <span className="text-sm text-gray-600 dark:text-gray-300">{(plan as any).databases}</span>
+                    </div>
+                  )}
                 </div>
 
                 <div className="flex items-baseline gap-1 mb-6">
-                  <span className="text-3xl font-bold text-[var(--game-color)]">{convertPrice(`$${plan.price}`)}</span>
-                  <span className="text-gray-500 dark:text-gray-400">/mo</span>
+                  <span className="text-2xl font-bold text-[var(--game-color)]">৳{plan.price}</span>
+                  <span className="text-gray-500 dark:text-gray-400 text-sm">BDT/mo</span>
                 </div>
 
                 <a

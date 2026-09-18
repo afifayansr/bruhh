@@ -10,7 +10,7 @@
     "supportedCurrencies": [
       {
         "code": "BDT",
-        "symbol": "৳",
+        "symbol": "\u09f3",
         "name": "Bangladeshi Taka"
       },
       {
@@ -20,12 +20,12 @@
       },
       {
         "code": "EUR",
-        "symbol": "€",
+        "symbol": "\u20ac",
         "name": "Euro"
       },
       {
         "code": "GBP",
-        "symbol": "£",
+        "symbol": "\u00a3",
         "name": "British Pound"
       },
       {
@@ -40,15 +40,15 @@
       },
       {
         "code": "JPY",
-        "symbol": "¥",
+        "symbol": "\u00a5",
         "name": "Japanese Yen"
       }
     ]
   },
   "themeSwitcher": {
-    "show": true,
+    "show": false,
     "position": "bottom-left",
-    "defaultColor": "blue",
+    "defaultColor": "green",
     "availableColors": [
       {
         "name": "orange",

@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Server, Cpu, MemoryStick, HardDrive, Wifi, HeartPulse } from "lucide-react"
+import { CheckCircle2, HardDrive, Globe, Mail, Folder, ShieldCheck, Zap } from "lucide-react"
 import { useState } from "react"
 import Image from "next/image"
 import webhostingConfig from "../../config/sections/webhosting.json"
@@ -23,15 +23,14 @@ export default function WebHostingPricingSection() {
       <div className="absolute inset-0">
         <div
           className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url('/banners/webhosting.png')`,
-          }}
+          style={{ backgroundImage: `url('/banners/webhosting.png')` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-gray-50 via-gray-50/40 to-transparent dark:from-[#0a0b0f] dark:via-[#0a0b0f]/30 dark:to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-t from-gray-50 via-gray-50/80 to-gray-50/40 dark:from-[#0a0b0f] dark:via-[#0a0b0f]/45 dark:to-[#0a0b0f]/60" />
       </div>
 
       <div className="relative z-10 mt-16 max-w-7xl mx-auto">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,6 +71,7 @@ export default function WebHostingPricingSection() {
           </div>
         </motion.div>
 
+        {/* Plan Type Tabs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -85,10 +85,11 @@ export default function WebHostingPricingSection() {
                 <button
                   key={planType.id}
                   onClick={() => setSelectedPlanType(planType.id)}
-                  className={`flex items-center gap-3 px-4 backdrop-blur-sm py-2 rounded-tl-2xl rounded-br-2xl font-medium transition-all duration-300 ${selectedPlanType === planType.id
+                  className={`flex items-center gap-3 px-4 backdrop-blur-sm py-2 rounded-tl-2xl rounded-br-2xl font-medium transition-all duration-300 ${
+                    selectedPlanType === planType.id
                       ? "button-primary border-primary text-button-primary shadow-lg"
                       : "bg-gray-200 dark:bg-gray-800/20 border border-secondary text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-700/30 hover:border-secondary"
-                    }`}
+                  }`}
                 >
                   <Image
                     src={planType.image || "/placeholder.svg"}
@@ -103,80 +104,131 @@ export default function WebHostingPricingSection() {
             </div>
           </div>
         </motion.div>
+
         <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">{t('webHostingPricing.step2')}</h3>
 
+        {/* Plan Cards */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-4"
         >
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {currentPlans.map((plan, index) => (
               <motion.div
                 key={plan.id}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.6 + index * 0.1 }}
-                className="relative bg-white dark:bg-gray-950/20 backdrop-blur-xl rounded-md overflow-hidden border border-secondary hover:border-secondary dark:hover:border-secondary transition-all duration-300"
+                className="relative bg-white dark:bg-gray-950/20 backdrop-blur-xl rounded-xl overflow-hidden border border-secondary hover:border-secondary dark:hover:border-secondary transition-all duration-300 flex flex-col"
               >
-                {plan.badge && (
-                  <div className="absolute top-4 right-4">
+                {/* Badge */}
+                {plan.badge ? (
+                  <div className="absolute top-4 right-4 z-10">
                     <span className="px-3 py-1 text-xs font-medium text-white button-primary rounded-tl-2xl rounded-br-2xl">
                       {plan.badge}
                     </span>
                   </div>
-                )}
-                <div className="p-6">
-                  <div className="flex items-center gap-4 mb-6">
+                ) : null}
+
+                {/* Card Header */}
+                <div className="p-6 pb-4 border-b border-gray-100 dark:border-gray-800/40">
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="w-10 h-10 rounded-lg flex items-center justify-center bg-green-50 dark:bg-green-900/20">
+                      <HardDrive className="w-5 h-5 text-green-600 dark:text-green-400" />
+                    </div>
                     <div>
-                      <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
-                      <p className="text-sm text-gray-500 dark:text-gray-400">{t('webHostingPricing.webHosting')}</p>
+                      <h3 className="text-lg font-bold text-gray-900 dark:text-white orbitron-font">{plan.name}</h3>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">BDIX Web Hosting</p>
                     </div>
                   </div>
-                  <div className="grid grid-cols-2 gap-4 mb-6">
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-2">
-                        <Cpu className="w-4 h-4 icon-primary" />
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{plan.cpuDetail}</span>
-                      </div>
-                      <span className="text-lg font-medium text-gray-900 dark:text-white">{plan.cpu}</span>
+
+                  {/* Availability pill */}
+                  {(plan as any).available !== undefined && (
+                    <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/40">
+                      <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                      <span className="text-xs font-medium text-green-700 dark:text-green-400">{(plan as any).available} Available</span>
                     </div>
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-2">
-                        <MemoryStick className="w-4 h-4 icon-primary" />
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{plan.ramDetail}</span>
-                      </div>
-                      <span className="text-lg font-medium text-gray-900 dark:text-white">{plan.ram}</span>
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-2">
-                        <HardDrive className="w-4 h-4 icon-primary" />
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{plan.storageDetail}</span>
-                      </div>
-                      <span className="text-lg font-medium text-gray-900 dark:text-white">{plan.storage}</span>
-                    </div>
-                    <div className="flex flex-col gap-1">
-                      <div className="flex items-center gap-2">
-                        <Wifi className="w-4 h-4 icon-primary" />
-                        <span className="text-sm text-gray-600 dark:text-gray-400">{plan.bandwidthDetail}</span>
-                      </div>
-                      <span className="text-lg font-medium text-gray-900 dark:text-white">{plan.bandwidth}</span>
+                  )}
+                </div>
+
+                {/* Key Specs */}
+                <div className="p-6 pb-3 grid grid-cols-2 gap-3">
+                  <div className="flex items-start gap-2">
+                    <HardDrive className="w-4 h-4 mt-0.5 text-green-500 flex-shrink-0" />
+                    <div>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">Storage</p>
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">{plan.storage}</p>
                     </div>
                   </div>
-                  <div className="flex items-center gap-2 mb-6">
-                    <HeartPulse className="w-4 h-4 icon-primary" />
-                    <span className="text-sm text-gray-600 dark:text-gray-400">{plan.uptime}</span>
+                  <div className="flex items-start gap-2">
+                    <Globe className="w-4 h-4 mt-0.5 text-green-500 flex-shrink-0" />
+                    <div>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">Websites</p>
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">{(plan as any).websites ?? plan.cpu}</p>
+                    </div>
                   </div>
-                  <div className="mt-6">
+                  <div className="flex items-start gap-2">
+                    <Zap className="w-4 h-4 mt-0.5 text-green-500 flex-shrink-0" />
+                    <div>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">RAM / I/O</p>
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">{plan.ram} · {(plan as any).io ?? "40 MB/s"}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Mail className="w-4 h-4 mt-0.5 text-green-500 flex-shrink-0" />
+                    <div>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">Email</p>
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">{(plan as any).emails ?? plan.bandwidth}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <Folder className="w-4 h-4 mt-0.5 text-green-500 flex-shrink-0" />
+                    <div>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">Subdomains</p>
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">{(plan as any).subdomains ?? "Unlimited"}</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-2">
+                    <ShieldCheck className="w-4 h-4 mt-0.5 text-green-500 flex-shrink-0" />
+                    <div>
+                      <p className="text-xs text-gray-500 dark:text-gray-400">Bandwidth</p>
+                      <p className="text-sm font-semibold text-gray-900 dark:text-white">{plan.bandwidth}</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Features List */}
+                {(plan as any).features && (
+                  <div className="px-6 pb-4">
+                    <div className="border-t border-gray-100 dark:border-gray-800/40 pt-3">
+                      <ul className="space-y-1.5">
+                        {((plan as any).features as string[]).map((feature: string) => (
+                          <li key={feature} className="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-green-500 flex-shrink-0" />
+                            {feature}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                )}
+
+                {/* Price & CTA */}
+                <div className="mt-auto p-6 pt-0">
+                  <div className="border-t border-gray-100 dark:border-gray-800/40 pt-4">
                     <div className="flex items-baseline justify-center mb-4">
+                      <span className="text-xs text-gray-500 dark:text-gray-400 mr-1">৳</span>
                       <span className="text-3xl font-bold orbitron-font text-gray-900 dark:text-white">
                         {convertPrice(plan.price)}
                       </span>
-                      <span className="ml-1 text-gray-500 dark:text-gray-400">{plan.period}</span>
+                      <span className="ml-1 text-sm text-gray-500 dark:text-gray-400">BDT{plan.period}</span>
                     </div>
                     <a
                       href={plan.orderLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       className="orbitron-font w-full button-primary text-button-primary px-6 py-3 rounded-lg font-medium transition-colors duration-300 flex items-center justify-center gap-2 border border-transparent hover:bg-[var(--hover-gradient)] hover:text-[var(--icon-text-primary)] hover:border-[var(--border-secondary)]"
                     >
                       {t('webHostingPricing.orderNow')}
